@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://you.github.io/</loc>
+    <lastmod>2016-02-17T22:25:00-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://you.github.io/page/author/</loc>
+    <lastmod>2016-02-17T22:25:00-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://you.github.io/post/helloworld/</loc>
+    <lastmod>2016-02-17T22:23:24-08:00</lastmod>
+  </url>
+  
+</urlset>

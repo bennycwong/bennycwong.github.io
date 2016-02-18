@@ -1,0 +1,18 @@
+<nav class="main-nav">
+	{{ $url := replace .Permalink .Site.BaseURL "" }}
+	<a href='{{ .Site.BaseURL }}'>{{ with .Site.Params.home }}{{ . }}{{ else }}Home{{ end }}</a>
+<!--
+	<a href='{{ .Site.BaseURL }}start'>{{ with .Site.Params.start }}{{ . }}{{ else }}Start Here{{ end }}</a>
+
+	<a href='{{ .Site.BaseURL }}books'>{{ with .Site.Params.books }}{{ . }}{{ else }}Books{{ end }}</a>
+
+	<a href='{{ .Site.BaseURL }}best'>{{ with .Site.Params.best }}{{ . }}{{ else }}Best Posts{{ end }}</a>
+
+	<a href='{{ .Site.BaseURL }}photo'>{{ with .Site.Params.photo }}{{ . }}{{ else }}Photos{{ end }}</a>
+-->
+	<a href='{{ .Site.BaseURL }}about'>{{ with .Site.Params.about }}{{ . }}{{ else }}About{{ end }}</a>
+
+	{{ if .Site.Params.enableRSS }}
+	<a  href="{{ .Site.RSSLink }}">{{ with .Site.Params.subscribe }}{{ . }}{{ else }}RSS{{ end }}</a>
+	{{ end }}
+</nav>
