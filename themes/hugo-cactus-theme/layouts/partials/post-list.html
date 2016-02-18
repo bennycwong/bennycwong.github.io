@@ -1,7 +1,7 @@
 <ul id="post-list">
     {{ range .Paginator.Pages }}
     {{ $url := replace .Permalink .Site.BaseURL "" }}
-        {{ if ne $url "about/" }}
+        {{ if in $url "post/" }}
             <li>
                 <a href='{{ .Permalink }}'><aside class="dates">{{ .Date.Format "Jan 2, 2006" }}</aside></a>
                 <a href='{{ .Permalink }}'>{{ .Title }} <h2>{{ .Description | markdownify }}</h2></a>

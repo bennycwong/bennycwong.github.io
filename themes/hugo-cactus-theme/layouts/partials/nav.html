@@ -1,6 +1,6 @@
 <nav class="main-nav">
 	{{ $url := replace .Permalink .Site.BaseURL "" }}
-	<a href='{{ .Site.BaseURL }}'>{{ with .Site.Params.home }}{{ . }}{{ else }}Home{{ end }}</a>
+	<a href='{{ .Site.BaseURL }}'>{{ with .Site.Params.home }}{{ . }}{{ else }}Blog{{ end }}</a>
 <!--
 	<a href='{{ .Site.BaseURL }}start'>{{ with .Site.Params.start }}{{ . }}{{ else }}Start Here{{ end }}</a>
 
@@ -10,6 +10,8 @@
 
 	<a href='{{ .Site.BaseURL }}photo'>{{ with .Site.Params.photo }}{{ . }}{{ else }}Photos{{ end }}</a>
 -->
+	<a href='{{ .Site.BaseURL }}open-source'>{{ with .Site.Params.openSource }}{{ . }}{{ else }}Open Source{{ end }}</a>
+
 	<a href='{{ .Site.BaseURL }}about'>{{ with .Site.Params.about }}{{ . }}{{ else }}About{{ end }}</a>
 
 	{{ if .Site.Params.enableRSS }}

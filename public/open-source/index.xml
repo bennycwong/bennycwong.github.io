@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open-sources on Blog of Wong</title>
+    <link>https://bennycwong.github.io/open-source/</link>
+    <description>Recent content in Open-sources on Blog of Wong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jun 2015 14:02:37 +0200</lastBuildDate>
+    <atom:link href="https://bennycwong.github.io/open-source/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Open Source</title>
+      <link>https://bennycwong.github.io/open-source/</link>
+      <pubDate>Sat, 20 Jun 2015 14:02:37 +0200</pubDate>
+      
+      <guid>https://bennycwong.github.io/open-source/</guid>
+      <description>
+
+&lt;p&gt;One of my goals this year is to contribute to open source and continue to give back to the community.
+These are my open source projects:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;ember-js:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Ember.js&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dollarshaveclub/ember-link-after-build&#34;&gt;ember-link-after-build&lt;/a&gt;&lt;br /&gt;
+This is a tool to help save build times.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/ember-bootstrap-4&#34;&gt;ember-bootstrap-4&lt;/a&gt;&lt;br /&gt;
+Easy way to use Bootstrap 4 in your Ember projects&lt;/p&gt;
+
+&lt;h4 id=&#34;ruby-rails:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Ruby/Rails&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/omniauth-nikeplus&#34;&gt;omniauth-nikeplus&lt;/a&gt;&lt;br /&gt;
+Auth strategy for Nike Plus&lt;/p&gt;
+
+&lt;h4 id=&#34;api:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;API&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/phoenix_f1_json_api&#34;&gt;phoenix_f1_json_api&lt;/a&gt;&lt;br /&gt;
+A Formula 1 Race Data written in Elixir/Phoenix&lt;/p&gt;
+
+&lt;h4 id=&#34;misc:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Misc&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/dotfiles&#34;&gt;dotfiles&lt;/a&gt;&lt;br /&gt;
+My Dotfiles to recreate my setup if necessary&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/.vim&#34;&gt;vim configs&lt;/a&gt;&lt;br /&gt;
+My current Vim configurations&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/dogdash&#34;&gt;Dogdash&lt;/a&gt;&lt;br /&gt;
+A Dashboard of cute animals. You can see it running at &lt;a href=&#34;https://dogdash.herokuapp.com/dogs&#34;&gt;https://dogdash.herokuapp.com/dogs&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

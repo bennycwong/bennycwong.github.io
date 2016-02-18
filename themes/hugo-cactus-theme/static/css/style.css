@@ -149,6 +149,17 @@ nav.main-nav a {
 	border-radius: 50%;
 }
 
+.open-source h1 {
+	margin-bottom: 16px;
+	color: #222;
+	line-height: 3rem;
+	text-align: center;
+	font: 700 48px/3rem "Montserrat", "Source Sans Pro", "Helvetica Neue", Helvetica,Arial,sans-serif;
+}
+.open-source h2 {
+	text-align: center;
+}
+
 /* Typography */
 /*Accent color*/
 a,

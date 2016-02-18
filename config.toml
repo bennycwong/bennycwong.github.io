@@ -1,12 +1,12 @@
 # Site settings
-baseurl = "http://replace-this-with-your-domain.com/"
+baseurl = "https://bennycwong.github.io/"
 languageCode = "en-us"
-title = "Control Alt Delete"
+title = "Blog of Wong"
 theme = "hugo-cactus-theme"
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
 # Disable comments by leaving disqusShortname empty
-disqusShortname = "spf13"
+disqusShortname = ""
 
 [params]
 	name = "Benny C. Wong"
@@ -43,5 +43,4 @@ disqusShortname = "spf13"
 [social]
     twitter  = "https://www.twitter.com/"
     facebook = "https://www.facebook.com/"
-    github   = "https://www.github.com/"
-    dribble  = "https://www.dribbble.com/"
+    github   = "https://www.github.com/bennycwong"
