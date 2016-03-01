@@ -1,7 +1,7 @@
 # Site settings
 baseurl = "https://bennycwong.github.io/"
 languageCode = "en-us"
-title = "Blog of Wong"
+title = "Blog of Benny Wong"
 theme = "hugo-cactus-theme"
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
@@ -11,7 +11,7 @@ disqusShortname = ""
 [params]
 	name = "Benny C. Wong"
 	description = "Blog of Benny C. Wong"
-	bio = "Blogger - Programmer - Gopher"
+	bio = "Blogger - Programmer"
 	# Enter optionally your twitter account
 	twitter = "Your Twitter account"
 	enableRSS = true
