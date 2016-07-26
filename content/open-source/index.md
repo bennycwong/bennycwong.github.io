@@ -2,9 +2,10 @@
 date = "2015-06-20T14:02:37+02:00"
 title = "Open Source"
 +++
-
+<center>
 One of my goals this year is to contribute to open source and continue to give back to the community.
-These are my open source projects:
+These are my open source projects.
+</center>
 
 ***
 #### Ember.js

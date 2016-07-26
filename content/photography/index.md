@@ -5,7 +5,8 @@ title = "Photography"
 
 +++
 <center>
-Photography has been a hobby of mine since the year 2000, back in the film days. Here's some of my best work.
+Photography has been a hobby of mine since the year 2000, back in days when film was the norm. Now, primarily shoot digital, but I do dabble in film here or there.  
+Below are some of my best work.
 </center>
 ***
 
