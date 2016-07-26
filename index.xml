@@ -1,13 +1,135 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog of Benny Wong</title>
+    <title>Blog</title>
     <link>https://bennycwong.github.io/</link>
-    <description>Recent content on Blog of Benny Wong</description>
+    <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Feb 2016 22:23:24 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jul 2016 01:09:39 -0700</lastBuildDate>
     <atom:link href="https://bennycwong.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Photography</title>
+      <link>https://bennycwong.github.io/photography/</link>
+      <pubDate>Tue, 26 Jul 2016 01:09:39 -0700</pubDate>
+      
+      <guid>https://bennycwong.github.io/photography/</guid>
+      <description>
+
+&lt;p&gt;&lt;center&gt;
+Photography has been a hobby of mine since the year 2000, back in the film days. Here&amp;rsquo;s some of my best work.
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;lord-windsor:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Lord Windsor&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1672/25182420115_3522f01d4e_h_d.jpg&#34; alt=&#34;Lord Windsor&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;feb-6-2016:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Feb 6, 2016&lt;/h2&gt;
+
+&lt;h2 id=&#34;lord-windsor-1:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Lord Windsor&lt;/h2&gt;
+
+&lt;h2 id=&#34;long-beach-ca:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Long Beach, CA&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://farm2.staticflickr.com/1472/24814705719_6512719bef_o_d.jpg&#34;&gt;full size&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;still:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Still&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1487/25089171801_de12c0f1f2_h_d.jpg&#34; alt=&#34;still&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;feb-6-2016-1:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Feb 6, 2016&lt;/h2&gt;
+
+&lt;h2 id=&#34;lord-windsor-2:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Lord Windsor&lt;/h2&gt;
+
+&lt;h2 id=&#34;long-beach-ca-1:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Long Beach, CA&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://c2.staticflickr.com/2/1487/25089171801_de12c0f1f2_h.jpg&#34;&gt;full size&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;el-matador:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;El Matador&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1618/25156129356_44be7c9268_h_d.jpg&#34; alt=&#34;El Matador&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;apr-16-2015:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Apr 16, 2015&lt;/h2&gt;
+
+&lt;h2 id=&#34;el-matador-beach:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;El Matador Beach&lt;/h2&gt;
+
+&lt;h2 id=&#34;malibu-ca:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Malibu, CA&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://farm2.staticflickr.com/1618/25156129356_52fcb69b8c_o_d.jpg&#34;&gt;full size&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;solar-eclipse-over-santa-monica-pier:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Solar Eclipse Over Santa Monica Pier&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;../images/eclipse.jpg&#34; alt=&#34;eclipse&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;may-20-2012:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;May 20, 2012&lt;/h2&gt;
+
+&lt;h2 id=&#34;santa-monica-beach:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Santa Monica Beach&lt;/h2&gt;
+
+&lt;h2 id=&#34;santa-monica-ca:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Santa Monica, CA&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;../images/eclipse.jpg&#34;&gt;full size&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Speaking</title>
+      <link>https://bennycwong.github.io/speaking/</link>
+      <pubDate>Tue, 26 Jul 2016 01:06:03 -0700</pubDate>
+      
+      <guid>https://bennycwong.github.io/speaking/</guid>
+      <description>&lt;p&gt;Someday I hope to fill this section with talks.&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Feynman Technique</title>
+      <link>https://bennycwong.github.io/primers/feynman-technique/</link>
+      <pubDate>Tue, 26 Jul 2016 00:14:05 -0700</pubDate>
+      
+      <guid>https://bennycwong.github.io/primers/feynman-technique/</guid>
+      <description>
+
+&lt;p&gt;Inspired by The Feynman Technique as taught by &lt;a href=&#34;https://www.scotthyoung.com/blog/&#34;&gt;Scott Young&lt;/a&gt; and the ADEPT Method as taught by Kalid at &lt;a href=&#34;https://betterexplained.com/&#34;&gt;Better Explained&lt;/a&gt;, my goal is to become a better student by writing primers (beginner&amp;rsquo;s guides) to others who are also learning. I hope you find these helpful.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;learn-faster-with-the-feyman-technique-by-scott-young:13a15424aa1843216936f1cd3fd26472&#34;&gt;Learn faster with the Feyman Technique by Scott Young&lt;/h5&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=FrNqSLPaZLc&#34;&gt;&lt;img src=&#34;http://img.youtube.com/vi/FrNqSLPaZLc/0.jpg&#34; alt=&#34;Learn Faster with the Feynman Technique &#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;step-1:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 1&lt;/h5&gt;
+
+&lt;p&gt;Write the name of the concept at the top of a blank piece of paper.&lt;/p&gt;
+
+&lt;h5 id=&#34;step-2:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 2:&lt;/h5&gt;
+
+&lt;p&gt;Write down an explanation of the concept on the page. Use plain English. Pretend you are teaching it to someone else (e.g a new student). This should highlight what you understand, but more importantly pinpoint what you don&amp;rsquo;t quite know.&lt;/p&gt;
+
+&lt;h5 id=&#34;step-3:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 3&lt;/h5&gt;
+
+&lt;p&gt;Review what you have pinpointed you don&amp;rsquo;t know. Go back to the source material, re-read, and re-learn it. Repeat Step 2.&lt;/p&gt;
+
+&lt;h5 id=&#34;step-4:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 4&lt;/h5&gt;
+
+&lt;p&gt;If you are using overly wordy or confusing language (or simply paraphrasing the source material) try again so you filter the content. Simplify your language, and where possible use simple analogy.&lt;/p&gt;
+
+&lt;h5 id=&#34;conclusion:13a15424aa1843216936f1cd3fd26472&#34;&gt;Conclusion&lt;/h5&gt;
+
+&lt;p&gt;That&amp;rsquo;s it. A simple and powerful technique to ensure you can rapidly learn and retain new concepts and information.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Hello World</title>
@@ -25,19 +147,18 @@
       <pubDate>Sat, 20 Jun 2015 14:02:37 +0200</pubDate>
       
       <guid>https://bennycwong.github.io/about/</guid>
-      <description>
+      <description>&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;../images/benny.png&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;m currently a software engineer at Dollar Shave Club.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m currently a senior software engineer at Dollar Shave Club.&lt;br /&gt;
+I blog about software. I also occasionally write &lt;a href=&#34;../primers&#34;&gt;primers&lt;/a&gt;.
+&lt;/center&gt;&lt;/p&gt;
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ullam earum dolorum! Sed, perspiciatis.&lt;/p&gt;
+&lt;!-- ***
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+### More Info.
 
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;more-info:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;More Info.&lt;/h3&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dicta corporis ad inventore itaque impedit dolor atque amet exercitationem! Veniam qui voluptas maiores vel laudantium necessitatibus, velit ducimus! Iste hic facere, accusamus fugiat enim facilis.&lt;/p&gt;
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dicta corporis ad inventore itaque impedit dolor atque amet exercitationem! Veniam qui voluptas maiores vel laudantium necessitatibus, velit ducimus! Iste hic facere, accusamus fugiat enim facilis. --&gt;
 </description>
     </item>
     
@@ -56,11 +177,16 @@ These are my open source projects:&lt;/p&gt;
 
 &lt;h4 id=&#34;ember-js:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Ember.js&lt;/h4&gt;
 
+&lt;p&gt;&lt;a href=&#34;https://github.com/dollarshaveclub/ember-router-scroll&#34;&gt;ember-router-scroll&lt;/a&gt;&lt;br /&gt;
+Scroll to top behavior with preserved browser history scroll position&lt;br /&gt;
+(I&amp;rsquo;m the co-author of this Ember addon)&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://github.com/dollarshaveclub/ember-link-after-build&#34;&gt;ember-link-after-build&lt;/a&gt;&lt;br /&gt;
 This is a tool to help save build times.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/ember-bootstrap-4&#34;&gt;ember-bootstrap-4&lt;/a&gt;&lt;br /&gt;
-Easy way to use Bootstrap 4 in your Ember projects&lt;/p&gt;
+Easy way to use Bootstrap 4 in your Ember projects&lt;br /&gt;
+(I&amp;rsquo;m no longer maintaining this project)&lt;/p&gt;
 
 &lt;h4 id=&#34;ruby-rails:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Ruby/Rails&lt;/h4&gt;
 
@@ -82,6 +208,70 @@ My current Vim configurations&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/dogdash&#34;&gt;Dogdash&lt;/a&gt;&lt;br /&gt;
 A Dashboard of cute animals. You can see it running at &lt;a href=&#34;https://dogdash.herokuapp.com/dogs&#34;&gt;https://dogdash.herokuapp.com/dogs&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Primers</title>
+      <link>https://bennycwong.github.io/primers/</link>
+      <pubDate>Sat, 20 Jun 2015 14:02:37 +0200</pubDate>
+      
+      <guid>https://bennycwong.github.io/primers/</guid>
+      <description>
+
+&lt;p&gt;&lt;center&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-best-way-to-learn-is-to-teach-it-to-someone-else:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&amp;ldquo;The best way to learn is to teach it to someone else.&amp;rdquo;&lt;/h2&gt;
+
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Inspired by The Feynman Technique as taught by &lt;a href=&#34;https://www.scotthyoung.com/blog/&#34;&gt;Scott Young&lt;/a&gt; and the ADEPT Method as taught by Kalid Azad at &lt;a href=&#34;https://betterexplained.com/&#34;&gt;Better Explained&lt;/a&gt;, my goal is to become a better student by writing primers (beginner&amp;rsquo;s guides) to others who are also learning. It&amp;rsquo;s also an avenue for me to practice teaching in simple terms. I hope you find these helpful.&lt;/p&gt;
+
+&lt;p&gt;Below are my primers.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;programming-software:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Programming/Software&lt;/h3&gt;
+
+&lt;h5 id=&#34;serializers-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Serializers (Coming Soon)&lt;/h5&gt;
+
+&lt;h3 id=&#34;technology:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Technology&lt;/h3&gt;
+
+&lt;h5 id=&#34;3d-printing-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;3D Printing (Coming Soon)&lt;/h5&gt;
+
+&lt;h5 id=&#34;public-key-cryptography-public-key-private-key-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Public-key cryptography (Public Key/Private Key) (Coming Soon)&lt;/h5&gt;
+
+&lt;h5 id=&#34;vpn-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;VPN (Coming Soon)&lt;/h5&gt;
+
+&lt;h3 id=&#34;workflow:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Workflow&lt;/h3&gt;
+
+&lt;h3 id=&#34;learning:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Learning&lt;/h3&gt;
+
+&lt;h5 id=&#34;the-feyman-technique-for-rapid-learning-primers-feynman-technique:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;../primers/feynman-technique&#34;&gt;The Feyman Technique for Rapid Learning&lt;/a&gt;&lt;/h5&gt;
+
+&lt;h5 id=&#34;holistic-learning-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Holistic Learning (Coming Soon)&lt;/h5&gt;
+
+&lt;h5 id=&#34;the-adept-method-by-kalid-azad-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;The ADEPT Method by Kalid Azad (Coming Soon)&lt;/h5&gt;
+
+&lt;h3 id=&#34;photography:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Photography&lt;/h3&gt;
+
+&lt;h5 id=&#34;exposure-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Exposure (Coming Soon)&lt;/h5&gt;
+
+&lt;h5 id=&#34;composition-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Composition (Coming Soon)&lt;/h5&gt;
+
+&lt;h5 id=&#34;lighting-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Lighting (Coming Soon)&lt;/h5&gt;
+
+&lt;h5 id=&#34;artificial-lights-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Artificial Lights (Coming Soon)&lt;/h5&gt;
+
+&lt;h3 id=&#34;misc:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Misc&lt;/h3&gt;
+
+&lt;h5 id=&#34;coffee-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Coffee (Coming Soon)&lt;/h5&gt;
+
+&lt;h5 id=&#34;audio-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Audio (Coming Soon)&lt;/h5&gt;
+
+&lt;h5 id=&#34;mens-style-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Mens Style (Coming Soon)&lt;/h5&gt;
 </description>
     </item>
     

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Abouts on Blog of Benny Wong</title>
+    <title>Abouts on Blog</title>
     <link>https://bennycwong.github.io/about/</link>
-    <description>Recent content in Abouts on Blog of Benny Wong</description>
+    <description>Recent content in Abouts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 Jun 2015 14:02:37 +0200</lastBuildDate>
@@ -15,19 +15,18 @@
       <pubDate>Sat, 20 Jun 2015 14:02:37 +0200</pubDate>
       
       <guid>https://bennycwong.github.io/about/</guid>
-      <description>
+      <description>&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;../images/benny.png&#34; width=&#34;200&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;m currently a software engineer at Dollar Shave Club.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m currently a senior software engineer at Dollar Shave Club.&lt;br /&gt;
+I blog about software. I also occasionally write &lt;a href=&#34;../primers&#34;&gt;primers&lt;/a&gt;.
+&lt;/center&gt;&lt;/p&gt;
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ullam earum dolorum! Sed, perspiciatis.&lt;/p&gt;
+&lt;!-- ***
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+### More Info.
 
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;more-info:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;More Info.&lt;/h3&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dicta corporis ad inventore itaque impedit dolor atque amet exercitationem! Veniam qui voluptas maiores vel laudantium necessitatibus, velit ducimus! Iste hic facere, accusamus fugiat enim facilis.&lt;/p&gt;
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dicta corporis ad inventore itaque impedit dolor atque amet exercitationem! Veniam qui voluptas maiores vel laudantium necessitatibus, velit ducimus! Iste hic facere, accusamus fugiat enim facilis. --&gt;
 </description>
     </item>
     
