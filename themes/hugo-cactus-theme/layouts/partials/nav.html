@@ -8,9 +8,15 @@
 
 	<a href='{{ .Site.BaseURL }}best'>{{ with .Site.Params.best }}{{ . }}{{ else }}Best Posts{{ end }}</a>
 
-	<a href='{{ .Site.BaseURL }}photo'>{{ with .Site.Params.photo }}{{ . }}{{ else }}Photos{{ end }}</a>
+	<a href='{{ .Site.BaseURL }}speaking'>{{ with .Site.Params.speaking }}{{ . }}{{ else }}Speaking{{ end }}</a>
 -->
+
+
+	<a href='{{ .Site.BaseURL }}primers'>{{ with .Site.Params.primers }}{{ . }}{{ else }}Primers{{ end }}</a>
+
 	<a href='{{ .Site.BaseURL }}open-source'>{{ with .Site.Params.openSource }}{{ . }}{{ else }}Open Source{{ end }}</a>
+
+	<a href='{{ .Site.BaseURL }}photography'>{{ with .Site.Params.photography }}{{ . }}{{ else }}Photos{{ end }}</a>
 
 	<a href='{{ .Site.BaseURL }}about'>{{ with .Site.Params.about }}{{ . }}{{ else }}About{{ end }}</a>
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Open-sources on Blog of Benny Wong</title>
+    <title>Open-sources on Blog</title>
     <link>https://bennycwong.github.io/open-source/</link>
-    <description>Recent content in Open-sources on Blog of Benny Wong</description>
+    <description>Recent content in Open-sources on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 Jun 2015 14:02:37 +0200</lastBuildDate>
@@ -24,11 +24,16 @@ These are my open source projects:&lt;/p&gt;
 
 &lt;h4 id=&#34;ember-js:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Ember.js&lt;/h4&gt;
 
+&lt;p&gt;&lt;a href=&#34;https://github.com/dollarshaveclub/ember-router-scroll&#34;&gt;ember-router-scroll&lt;/a&gt;&lt;br /&gt;
+Scroll to top behavior with preserved browser history scroll position&lt;br /&gt;
+(I&amp;rsquo;m the co-author of this Ember addon)&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://github.com/dollarshaveclub/ember-link-after-build&#34;&gt;ember-link-after-build&lt;/a&gt;&lt;br /&gt;
 This is a tool to help save build times.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/ember-bootstrap-4&#34;&gt;ember-bootstrap-4&lt;/a&gt;&lt;br /&gt;
-Easy way to use Bootstrap 4 in your Ember projects&lt;/p&gt;
+Easy way to use Bootstrap 4 in your Ember projects&lt;br /&gt;
+(I&amp;rsquo;m no longer maintaining this project)&lt;/p&gt;
 
 &lt;h4 id=&#34;ruby-rails:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Ruby/Rails&lt;/h4&gt;
 
