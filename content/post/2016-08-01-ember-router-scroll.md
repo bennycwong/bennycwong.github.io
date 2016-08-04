@@ -17,7 +17,7 @@ menu = "blog"
 
 ***
 <center>
-##### This is a copy of blog post on the [DSC Engineering Blog](http://engineering.dollarshaveclub.com/introducing-ember-router-scroll/)
+__Editorial Note:__ I originally wrote this post for the [DSC Engineering Blog](http://engineering.dollarshaveclub.com/introducing-ember-router-scroll/).  Head over to there and check out the original.  While you’re there, have a look at the other articles.
 </center>
 ***
 
