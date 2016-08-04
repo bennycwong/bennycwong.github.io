@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Blog</title>
-    <link>https://bennycwong.github.io/post/</link>
-    <description>Recent content in Posts on Blog</description>
+    <title>Rebase on Blog</title>
+    <link>https://bennycwong.github.io/tags/rebase/</link>
+    <description>Recent content in Rebase on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 03 Aug 2016 19:19:37 -0700</lastBuildDate>
-    <atom:link href="https://bennycwong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bennycwong.github.io/tags/rebase/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Git Rebase: Getting Started</title>
@@ -218,51 +218,6 @@ $ git clone git@github.com:bennycwong/git-rebase-practice.git
 &lt;h2 id=&#34;appendix-b-so-what-about-conflicts:702faf315c6b59cc55b18aa5ea562949&#34;&gt;Appendix B: So what about conflicts?&lt;/h2&gt;
 
 &lt;p&gt;Conflicts happen whether you merge or rebase. Look for a post in the future that discuss this topic further&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Introducing ember-router-scroll</title>
-      <link>https://bennycwong.github.io/post/2016-08-01-ember-router-scroll/</link>
-      <pubDate>Mon, 01 Aug 2016 22:23:24 -0800</pubDate>
-      
-      <guid>https://bennycwong.github.io/post/2016-08-01-ember-router-scroll/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;center&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;this-is-a-copy-of-blog-post-on-the-dsc-engineering-blog-http-engineering-dollarshaveclub-com-introducing-ember-router-scroll:05ab64702f992358981046234bf382b4&#34;&gt;This is a copy of blog post on the &lt;a href=&#34;http://engineering.dollarshaveclub.com/introducing-ember-router-scroll/&#34;&gt;DSC Engineering Blog&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Here at Dollar Shave Club, we rely heavily on open-source technologies.
-We chose Ember.js as our front end framework to build our web experience.&lt;/p&gt;
-
-&lt;p&gt;By design, Ember maintains scroll position when transitioning between routes.
-This makes sense for typical single page applications (SPAs), as SPAs tend to be rendered with nested views.
-If a nested view is 1000px down the page, when you enter that nested route, you would want to still be 1000px down the page.&lt;/p&gt;
-
-&lt;p&gt;However, our design calls for rendering pages in a non-nested fashion.
-The default Ember behavior of maintaining scroll position is no longer the right user experience (UX).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/4430436/17122972/0a1fe454-5295-11e6-937f-f1f5beab9d6b.gif&#34; alt=&#34;Default ember scroll behavior&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As a result, one of the first pieces of Ember code written here at Dollar Shave Club is a way to scroll the user to the top of the page on route transition.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, this presents a new UX problem.
-While scroll-to-top is good UX for entering a new route, a user would expect to maintain scroll position when going back and forward in the browser.&lt;/p&gt;
-
-&lt;p&gt;To solve this problem, we created a &lt;code&gt;scrollMap&lt;/code&gt; to store scroll states on &lt;code&gt;willTransition&lt;/code&gt;, a hook that gets called whenever a user leaves a route.
-In the &lt;code&gt;didTransition&lt;/code&gt; hook, we check to see if the transition was triggered by a browser history event (&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Events/popstate&#34;&gt;popstate event&lt;/a&gt;).
-If a popstate is detected, the user is sent to the scroll position in the &lt;code&gt;scrollMap&lt;/code&gt; instead of the top.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/4430436/17122970/07c1a3a0-5295-11e6-977f-37eb955d95b1.gif&#34; alt=&#34;ember-router-scroll behavior&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Check it out here: &lt;a href=&#34;https://github.com/dollarshaveclub/ember-router-scroll&#34;&gt;ember-router-scroll&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
