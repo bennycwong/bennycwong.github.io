@@ -1,0 +1,373 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Benny C. Wong">
+		<meta name="description" content="">
+		<meta name="generator" content="Hugo 0.15" />
+		<title>Git Rebase: Getting Started &middot; Blog</title>
+		<link rel="shortcut icon" href="https://bennycwong.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://bennycwong.github.io/css/style.css">
+		<link rel="stylesheet" href="https://bennycwong.github.io/css/highlight.css">
+		<link rel="stylesheet" href="https://bennycwong.github.io/css/monosocialiconsfont.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		
+		<link href="https://bennycwong.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Blog" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	<a href='https://bennycwong.github.io/'>Blog</a>
+
+
+
+	<a href='https://bennycwong.github.io/primers'>Primers</a>
+
+	<a href='https://bennycwong.github.io/open-source'>Open Source</a>
+
+	<a href='https://bennycwong.github.io/photography'>Photos</a>
+
+	<a href='https://bennycwong.github.io/about'>About</a>
+
+	
+	<a  href="https://bennycwong.github.io/index.xml">RSS</a>
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>Git Rebase: Getting Started</h1>
+                    <h2 class="headline">August 3, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>From my experience teaching newer developers how to use <u><strong>git</strong></u> in our workflow at Dollar Shave Club, the <u><strong>rebase</strong></u> feature tends to be one of the most confusing.
+I remember having a hard time wrapping my head around it for a while.
+This is my attempt at explaining what <u><strong>rebase</strong></u> is, as I would&rsquo;ve liked to have been taught.*</p>
+
+<h2 id="a-star-wars-illustration-analogy:702faf315c6b59cc55b18aa5ea562949">A. Star Wars illustration (Analogy)</h2>
+
+<p>You are playing the (fictional) latest open-world alternate universe Star Wars game.
+In this game, there are dozens of worlds to explore, and in each level, you can gather all sorts of loot. You can <u><strong>save</strong></u> game at any time.</p>
+
+<h5 id="the-save-feature-is-git-it-s-a-way-to-store-the-history-of-your-game-and-how-you-go-to-where-you-are-in-git-we-call-these-saves-u-commits-u:702faf315c6b59cc55b18aa5ea562949">The save feature is git. It&rsquo;s a way to store the history of your game and how you go to where you are. In git, we call these saves <u>commits</u>.</h5>
+
+<p>What makes this game open-world is that you can choose which which world (level) to go to in whatever order you want. You can go from Naboo, then to Endor, and then back to Hoth.</p>
+
+<h5 id="being-in-the-open-world-is-like-having-branches-from-one-of-your-saves-you-can-branch-out-and-beat-levels-however-you-want-based-on-a-certain-previous-save:702faf315c6b59cc55b18aa5ea562949">Being in the open world is like having branches. From one of your saves, you can branch out and beat levels however you want based on a certain previous save.</h5>
+
+<p>For example, for the first part of the game, our saves look like this:</p>
+
+<pre><code>Level 1 (Naboo) -&gt; Level 2 (Coruscant) -&gt; Level 3 (Kashyyyk)
+</code></pre>
+
+<p>At this point, you saved the games 3 times, and is on game <u><strong>save #3</strong></u>.</p>
+
+<p>Next, you decide you want to jump to Level 10, The Death Star.</p>
+
+<p>Midway through the level 10 (The Death Star) level would be a lot easier to drop bombs in this exhaust shaft if you were in an X-Wing Fighter.
+In order to get the X-Wing, you need to beat level 7 (Yavin 4).
+Getting to this point in the death star was a lot of hard work involving some precise dodging of Tie Fighters that you don&rsquo;t want to do again.</p>
+
+<p>You decide to save the game here.
+This is <u><strong>save #4</strong></u>.</p>
+
+<pre><code>Level 3 (Kashyyyk) -&gt; Mid Way Through Level 10 (The Death Star)
+</code></pre>
+
+<p>We call the above play-through <u><strong>the feature branch</strong></u>.</p>
+
+<p>Now, you decide to start at <u><strong>Save #3</strong></u> and beat level 6 and 7, where you gain some force powers and an X-Wing:</p>
+
+<pre><code>Level 3 (Kashyyyk) -&gt; Level 6 (Tatooine) -&gt; Level 7 (Yavin 4)
+</code></pre>
+
+<p>We call the above play-through <u><strong>the master branch</strong></u>.</p>
+
+<p>The game consider these two <u><strong>branches</strong></u> completely different play-throughs.</p>
+
+<p>One amazing feature the game developers created was to let you <u><strong>combine</strong></u> these branches as if it was one play-through.</p>
+
+<p>There are two strategies to combine the play-throughs: <u><strong>merge</strong></u> and <u><strong>rebase</strong></u>.</p>
+
+<h4 id="1-merge:702faf315c6b59cc55b18aa5ea562949">1. Merge</h4>
+
+<p>Using this strategy, you would be in <u><strong>save #4 in the feature branch</strong></u> and merging in <u><strong>save #5 in the master branch</strong></u>. Practically, it&rsquo;s as if you were in the middle of your fight in the Death Star, and then teleported to Level 5 (Tatooine) and Level 6 (Yevin 4), got your force skills and the X-wing, and teleported back into the heat of battle with the Death Star in your new X-wing.</p>
+
+<p>Here&rsquo;s the new history:</p>
+
+<pre><code>Level 3 (Kashyyyk) -&gt; Mid Way Through Level 10 (The Death Star) -&gt; Level 6 (Tatooine) -&gt; Level 7 (Yavin) -&gt; Merge Save
+</code></pre>
+
+<p>Notice that there&rsquo;s an extra bit of history at end. In the git world. this is called a merge commit.</p>
+
+<p>In this example, we are merging</p>
+
+<pre><code>(the master branch) --&gt; (the feature branch)
+</code></pre>
+
+<p>In the command line, you would do the following
+(assuming you are in the feature branch):</p>
+
+<pre><code>git merge {repo} branch-b  
+</code></pre>
+
+<p><br></p>
+
+<h4 id="2-rebase:702faf315c6b59cc55b18aa5ea562949">2. Rebase</h4>
+
+<p>Rebasing, unlike merging, is rewinding to a common point in history, and then applying the history of the target branch, and then applying the history of the current branch.</p>
+
+<p>In our Star Wars example, rebasing <u><strong>save #4 in the feature branch</strong></u> with <u><strong>save #5 in the master branch</strong></u> is stopping in the middle of the Death Star battle, rewinding time to Level 3 (Kashyyyk), playing through Level 6 and 7, and then going through Level 10 (The Death Star) all the way to the point in <u><strong>save #4</strong></u>, as if it was on the same play-through.</p>
+
+<p>To illustrate this, we are doing this:</p>
+
+<pre><code>Level 3 (Kashyyyk) -&gt; Level 6 (Tatooine) -&gt; Level 7 (Yavin 4) -&gt; Mid Way Through Level 10 (The Death Star)
+</code></pre>
+
+<p>Note that there is no extra <u><strong>merge commit</strong></u></p>
+
+<p>In the command line, you would do the following
+(assuming you are in the feature branch):</p>
+
+<pre><code>git rebase {repo} branch-b
+</code></pre>
+
+<h2 id="b-rebase-vs-merge-visualized-diagram:702faf315c6b59cc55b18aa5ea562949">B. Rebase vs Merge Visualized (Diagram)</h2>
+
+<p>Here&rsquo;s a visual representation of what the game saves.</p>
+
+<h5 id="branches-play-throughs:702faf315c6b59cc55b18aa5ea562949">Branches (Play-throughs)</h5>
+
+<p><img src="https://www.atlassian.com/git/images/tutorials/advanced/merging-vs-rebasing/01.svg" alt="branch" />
+Legend:<br />
+White &ndash; Your history up till  <u><strong>save #3</strong></u>.<br />
+Green &ndash; Your progress in level 10 (The Death Star) <u><strong>save #4</strong></u>.<br />
+Blue &ndash; Your saved game after beating level 6 (Tatooine) and 7 (Yavin)  <u><strong>save #5</strong></u>.</p>
+
+<h5 id="merge-strategy:702faf315c6b59cc55b18aa5ea562949">Merge Strategy</h5>
+
+<p><img src="https://www.atlassian.com/git/images/tutorials/advanced/merging-vs-rebasing/02.svg" alt="merge" /></p>
+
+<h5 id="rebase-strategy:702faf315c6b59cc55b18aa5ea562949">Rebase Strategy</h5>
+
+<p><img src="https://www.atlassian.com/git/images/tutorials/advanced/merging-vs-rebasing/03.svg" alt="rebase" /></p>
+
+<h2 id="c-repo-to-practice-example:702faf315c6b59cc55b18aa5ea562949">C. Repo To Practice (Example)</h2>
+
+<p>For practice, I&rsquo;ve created a demo repo for you to play with.<br />
+Check it out here: <a href="https://github.com/bennycwong/git-rebase-practice">git-rebase-practice</a> on github.</p>
+
+<p>Note: The $ sign is the command prompt</p>
+
+<pre><code>$ git clone git@github.com:bennycwong/git-rebase-practice.git
+$ cd git-rebase-practice
+$ git checkout master
+</code></pre>
+
+<p>Next, take a look at the log.</p>
+
+<pre><code>$ git log --oneline
+
+1b4583c mid way through level 10
+93077bc level 3 complete
+efcf95f level 2 complete
+ad638fb level 1 complete
+f295f6c intial commit
+</code></pre>
+
+<p>Now try to merge feature into master and the take a look at the logs</p>
+
+<pre><code>$ git merge origin/feature
+$ git log --oneline
+
+facb4e5 Merge branch 'feature'
+4166d41 level 7 complete
+87ef0c0 level 6 complete
+1b4583c mid way through level 10
+93077bc level 3 complete
+efcf95f level 2 complete
+ad638fb level 1 complete
+f295f6c intial commit
+</code></pre>
+
+<p>Next, reset your branch (don&rsquo;t worry if you don&rsquo;t understand this)</p>
+
+<pre><code>$ git reset --hard 1b4583c   
+</code></pre>
+
+<p>And then rebase and the take a look at the logs</p>
+
+<pre><code>$ git rebase origin/feature
+First, rewinding head to replay your work on top of it...
+Applying: mid way through level 10
+
+$ git log
+4cea1be mid way through level 10
+4166d41 level 7 complete
+87ef0c0 level 6 complete
+93077bc level 3 complete
+efcf95f level 2 complete
+ad638fb level 1 complete
+f295f6c intial commit
+</code></pre>
+
+<p>Make sure you run this in your terminal. Notice that the commit SHAs are now complete different than they were in the merge. This is because we are writing new history.</p>
+
+<p>Definitely play around in your own terminal and try merging/rebasing master into the feature branch. If you get to a state that&rsquo;s too broken, you can always delete the repo and try again:</p>
+
+<pre><code>$ cd ..
+$ rm -rf git-rebase-practice
+$ git clone git@github.com:bennycwong/git-rebase-practice.git
+</code></pre>
+
+<h2 id="d-so-why-is-it-called-rebasing-plain-english:702faf315c6b59cc55b18aa5ea562949">D. So why is it called rebasing? (Plain English)</h2>
+
+<p>Here is a helpful heuristic to remember rebasing means. Think of this as literally re-<strong>base</strong>-ing something. You are changing what your current branch is <strong>based</strong> on.</p>
+
+<p>Another way to put it, rebase is going back in time and changing history according to another timeline before apply my changes in this current timeline.</p>
+
+<h2 id="e-learn-more-technical-definition:702faf315c6b59cc55b18aa5ea562949">E. Learn More (Technical Definition)</h2>
+
+<p>If you want to learn more about this topic, Atlassian has a great git tutorial series <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing/summary">here</a>.</p>
+
+<h2 id="appendix-a-the-adept-method:702faf315c6b59cc55b18aa5ea562949">*Appendix A: The ADEPT Method</h2>
+
+<p>I&rsquo;m currently learning how to apply the <a href="https://betterexplained.com/articles/adept-method/">ADEPT Method</a> of teaching.</p>
+
+<p><center>
+  <img src="https://betterexplained.com/wp-content/uploads/adept/adept-method.png" alt="ADEPT" />
+</center></p>
+
+<h2 id="appendix-b-so-what-about-conflicts:702faf315c6b59cc55b18aa5ea562949">Appendix B: So what about conflicts?</h2>
+
+<p>Conflicts happen whether you merge or rebase. Look for a post in the future that discuss this topic further&hellip;</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/Your%20Twitter%20account">
+                        <img class="avatar" src="https://bennycwong.github.io/images/avatar.png">
+                        <div>
+                            <span class="dark">Benny C. Wong</span>
+                            <span>I&#39;m a software engineer.</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fbennycwong.github.io%2fpost%2f2016-08-03-git-rebase%2f - Git%20Rebase%3a%20Getting%20Started by @Your%20Twitter%20account"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/post/2016-08-03-git-rebase/">Git Rebase: Getting Started<aside class="dates">Aug 3, 2016</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/post/2016-08-01-ember-router-scroll/">Introducing ember-router-scroll<aside class="dates">Aug 1, 2016</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/photography/">Photography<aside class="dates">Jul 26, 2016</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/speaking/">Speaking<aside class="dates">Jul 26, 2016</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/primers/feynman-technique/">The Feynman Technique<aside class="dates">Jul 26, 2016</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/open-source/">Open Source<aside class="dates">Jun 20, 2015</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/primers/">Primers<aside class="dates">Jun 20, 2015</aside></a>
+        </li>
+        
+   
+</ul>
+
+            <footer id="footer">
+    
+        
+<div id="social">
+    
+    <a class="symbol" href="https://www.facebook.com/">
+        circlefacebook
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/bennycwong">
+        circlegithub
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/">
+        circletwitterbird
+    </a>
+    
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2016 Benny C. Wong
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://bennycwong.github.io/js/main.js"></script>
+<script src="https://bennycwong.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    </body>
+</html>
