@@ -11,10 +11,10 @@
     
     <item>
       <title>Git Rebase: Getting Started</title>
-      <link>https://bennycwong.github.io/post/2016-08-03-git-rebase/</link>
+      <link>https://bennycwong.github.io/post/git-rebase-getting-started/</link>
       <pubDate>Wed, 03 Aug 2016 19:19:37 -0700</pubDate>
       
-      <guid>https://bennycwong.github.io/post/2016-08-03-git-rebase/</guid>
+      <guid>https://bennycwong.github.io/post/git-rebase-getting-started/</guid>
       <description>
 
 &lt;p&gt;From my experience teaching newer developers how to use &lt;u&gt;&lt;strong&gt;git&lt;/strong&gt;&lt;/u&gt; in our workflow at Dollar Shave Club, the &lt;u&gt;&lt;strong&gt;rebase&lt;/strong&gt;&lt;/u&gt; feature tends to be one of the most confusing.

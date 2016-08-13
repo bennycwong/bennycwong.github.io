@@ -650,3 +650,51 @@ h2.month {
 	.post h1 { font-size:24px; }
 	.post h2 { font-size:32px; }
 }
+
+/* Tags */
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.tags li {
+  float: left;
+  list-style-type: none;
+}
+
+.tag {
+	font-size: 12px;
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 14px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: #007CB9;
+  color: white;
+}
+
+.tag:hover::after {
+   border-left-color: #007CB9;
+}

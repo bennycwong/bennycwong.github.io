@@ -11,10 +11,10 @@
     
     <item>
       <title>Git Rebase: Getting Started</title>
-      <link>https://bennycwong.github.io/post/2016-08-03-git-rebase/</link>
+      <link>https://bennycwong.github.io/post/git-rebase-getting-started/</link>
       <pubDate>Wed, 03 Aug 2016 19:19:37 -0700</pubDate>
       
-      <guid>https://bennycwong.github.io/post/2016-08-03-git-rebase/</guid>
+      <guid>https://bennycwong.github.io/post/git-rebase-getting-started/</guid>
       <description>
 
 &lt;p&gt;From my experience teaching newer developers how to use &lt;u&gt;&lt;strong&gt;git&lt;/strong&gt;&lt;/u&gt; in our workflow at Dollar Shave Club, the &lt;u&gt;&lt;strong&gt;rebase&lt;/strong&gt;&lt;/u&gt; feature tends to be one of the most confusing.
@@ -223,10 +223,10 @@ $ git clone git@github.com:bennycwong/git-rebase-practice.git
     
     <item>
       <title>Introducing ember-router-scroll</title>
-      <link>https://bennycwong.github.io/post/2016-08-01-ember-router-scroll/</link>
+      <link>https://bennycwong.github.io/post/ember-router-scroll/</link>
       <pubDate>Mon, 01 Aug 2016 22:23:24 -0800</pubDate>
       
-      <guid>https://bennycwong.github.io/post/2016-08-01-ember-router-scroll/</guid>
+      <guid>https://bennycwong.github.io/post/ember-router-scroll/</guid>
       <description>&lt;hr /&gt;
 
 &lt;p&gt;&lt;center&gt;
@@ -245,7 +245,9 @@ If a nested view is 1000px down the page, when you enter that nested route, you 
 &lt;p&gt;However, our design calls for rendering pages in a non-nested fashion.
 The default Ember behavior of maintaining scroll position is no longer the right user experience (UX).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/4430436/17122972/0a1fe454-5295-11e6-937f-f1f5beab9d6b.gif&#34; alt=&#34;Default ember scroll behavior&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;https://cloud.githubusercontent.com/assets/4430436/17122972/0a1fe454-5295-11e6-937f-f1f5beab9d6b.gif&#34; alt=&#34;Default ember scroll behavior&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
 
 &lt;p&gt;As a result, one of the first pieces of Ember code written here at Dollar Shave Club is a way to scroll the user to the top of the page on route transition.&lt;/p&gt;
 
@@ -256,7 +258,9 @@ While scroll-to-top is good UX for entering a new route, a user would expect to 
 In the &lt;code&gt;didTransition&lt;/code&gt; hook, we check to see if the transition was triggered by a browser history event (&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Events/popstate&#34;&gt;popstate event&lt;/a&gt;).
 If a popstate is detected, the user is sent to the scroll position in the &lt;code&gt;scrollMap&lt;/code&gt; instead of the top.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/4430436/17122970/07c1a3a0-5295-11e6-977f-37eb955d95b1.gif&#34; alt=&#34;ember-router-scroll behavior&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;https://cloud.githubusercontent.com/assets/4430436/17122970/07c1a3a0-5295-11e6-977f-37eb955d95b1.gif&#34; alt=&#34;ember-router-scroll behavior&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
 
 &lt;p&gt;Check it out here: &lt;a href=&#34;https://github.com/dollarshaveclub/ember-router-scroll&#34;&gt;ember-router-scroll&lt;/a&gt;.&lt;/p&gt;
 </description>
