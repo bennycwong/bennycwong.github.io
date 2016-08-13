@@ -8,8 +8,19 @@
                     <h1>{{ .Title }}</h1>
                     <h2 class="headline">{{ .Date.Format "January 2, 2006" }}</h2>
                 </header>
+
                 <section id="post-body">
                     {{ .Content }}
+                </section>
+                <section>
+                  <hr>
+                  <h5>Tags:</h5>
+
+                  <ul class="tags">
+                    {{ range .Params.tags }}
+                      <li><a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                  </ul>
                 </section>
             </article>
             <footer id="post-meta" class="clearfix">

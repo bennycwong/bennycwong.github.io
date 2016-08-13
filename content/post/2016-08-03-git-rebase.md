@@ -1,6 +1,6 @@
 +++
 date = "2016-08-03T19:19:37-07:00"
-description = ""
+description = "The way I wish I was taught"
 title = "Git Rebase: Getting Started"
 
 tags = [
@@ -11,6 +11,7 @@ tags = [
 
 author = "Benny Wong"
 menu = "blog"
+slug = "git-rebase-getting-started"
 +++
 
 From my experience teaching newer developers how to use <u>__git__</u> in our workflow at Dollar Shave Club, the <u>__rebase__</u> feature tends to be one of the most confusing.
