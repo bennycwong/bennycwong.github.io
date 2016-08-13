@@ -5,12 +5,13 @@ title = "About"
 <center>
 <img src="../images/benny.png" width="200" />  
 
-I'm currently a senior software engineer at Dollar Shave Club.  
-I blog about software. I also occasionally write [primers](../primers).
+My name is Benny C. Wong.  
+I'm software engineer at currently working for Dollar Shave Club.  
+I write about software. I also occasionally write [primers](../primers).
+
+<img src="https://c2.staticflickr.com/8/7715/27377489346_60e3ce9aa7_c.jpg" />  
+
+
+
+
 </center>
-
-<!-- ***
-
-### More Info.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dicta corporis ad inventore itaque impedit dolor atque amet exercitationem! Veniam qui voluptas maiores vel laudantium necessitatibus, velit ducimus! Iste hic facere, accusamus fugiat enim facilis. -->

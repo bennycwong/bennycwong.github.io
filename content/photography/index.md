@@ -5,11 +5,23 @@ title = "Photography"
 
 +++
 <center>
-Photography has been a hobby of mine since the year 2000, back in days when film was the norm. Now, primarily shoot digital, but I do dabble in film here or there.  
-Below are some of my best work.
+Photography has been a hobby of mine since the year 2000, back in days when film was the norm. Now, I primarily shoot digital, but I do dabble in film here or there.  
+Below are some of my favorites.
 </center>
 ***
 
+##### Day After Birth
+![Marcus Canyon](https://c2.staticflickr.com/2/1505/25064202002_7a79197d43_o.jpg)
+
+This is my son, Marcus, one day after birth.  
+
+## Feb 11, 2016
+## UCLA Santa Monica Hospital
+## Santa Monica, CA
+
+[full size](https://c2.staticflickr.com/2/1505/25064202002_7a79197d43_o.jpg)
+
+***
 ##### Lord Windsor
 
 ![Lord Windsor](https://farm2.staticflickr.com/1672/25182420115_3522f01d4e_h_d.jpg)
@@ -32,7 +44,7 @@ Below are some of my best work.
 
 ***
 
-##### El Matador
+##### El Matador (Film)
 
 ![El Matador](https://farm2.staticflickr.com/1618/25156129356_44be7c9268_h_d.jpg)
 ## Apr 16, 2015
