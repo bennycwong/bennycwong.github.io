@@ -6,8 +6,90 @@
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Aug 2016 19:19:37 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 13 Aug 2016 11:20:18 -0700</lastBuildDate>
     <atom:link href="https://bennycwong.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Puzzle  |&gt; Simulations in Elixir</title>
+      <link>https://bennycwong.github.io/post/riddler-simulations-in-elixir/</link>
+      <pubDate>Sat, 13 Aug 2016 11:20:18 -0700</pubDate>
+      
+      <guid>https://bennycwong.github.io/post/riddler-simulations-in-elixir/</guid>
+      <description>
+
+&lt;p&gt;For the past few months, I have learning the &lt;a href=&#34;http://elixir-lang.org/&#34;&gt;elixir&lt;/a&gt; programming language. Much has been written about Elixir, so I won&amp;rsquo;t go into too much details about the language itself.&lt;/p&gt;
+
+&lt;p&gt;Instead, I want to share my journey learning elixir. The first stage of my programming language learning is writing a lot of code, with little to no self consciousness about writing &amp;ldquo;bad code&amp;rdquo;. This is in no way the best way to write elixir (probably), but it&amp;rsquo;s the first step to take me from &lt;strong&gt;knowing about&lt;/strong&gt; something to &lt;strong&gt;knowing something&lt;/strong&gt;. I plan to revisit these in the future as I learn more through programming more in elixir.&lt;/p&gt;
+
+&lt;h4 id=&#34;the-riddler:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;The Riddler&lt;/h4&gt;
+
+&lt;p&gt;The Riddler is a series of puzzles written by the folks at &lt;a href=&#34;https://fivethirtyeight.com/tag/the-riddler/&#34;&gt;Five Thirty Eight&lt;/a&gt;. Every week or so, they publish a new riddle, as well as post answers to the previous week&amp;rsquo;s puzzles.&lt;/p&gt;
+
+&lt;p&gt;The riddles/puzzles are statistical of nature. The answer is usually a math formula or some way to express the probability or expected value of it.&lt;/p&gt;
+
+&lt;p&gt;I think there are two ways to solve these problems.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Think about the problem like a statistician and break down the problem in its own smaller components. Solve for the expected value and probability. Finally combine it all together.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Build a simulation and run it a lot of times.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;While the first approach is probably the smarter way to go, building simulations is fun. Plus, if the proof is in the pudding. If my simulation is done right, it becomes the test case to &lt;strong&gt;verify the math from the first approach&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Below are two simulations I wrote in Elixir to solve the puzzles on &lt;a href=&#34;https://fivethirtyeight.com/tag/the-riddler/&#34;&gt;The Riddler at fivethirtyeight&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;writing-simulations:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;Writing Simulations&lt;/h4&gt;
+
+&lt;p&gt;I often hear this advice: you learn more when you build your own projects, instead of just following along with tutorials. This gives us two advantage: you care more about building it, thus sustaining your &lt;strong&gt;motivation&lt;/strong&gt;, and it requires you to do more than just follow steps. &lt;strong&gt;It makes you think.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I have observed this to be true. However, coming up with what projects to write is hard work. Seriously hard work. People do this as a career (Product Management).&lt;/p&gt;
+
+&lt;p&gt;The hard work of trying to figure out what to build is &lt;strong&gt;not necessary when the purpose of the project is to learn a new technologies&lt;/strong&gt;. Hard problems are good, but we need to focus on the right problems.&lt;/p&gt;
+
+&lt;p&gt;Since my goal at this phase of learning elixir is writing a lot of programs, I needed a problem that is already defined. Riddler puzzles are great because the problem is given to me. I don&amp;rsquo;t have to spend energy trying to figure out &lt;strong&gt;what&lt;/strong&gt; to write. I just need to figure out &lt;strong&gt;how&lt;/strong&gt; to write it.&lt;/p&gt;
+
+&lt;p&gt;Also, I really like brain teasers and puzzles. These kinds of problems are &lt;strong&gt;fun for me&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In addition, the fine folks at fivethirtyeight also provide modifications to the problem. This gives a chance to try and refactor and change my code. This is a good time to see how well I abstracted the code. Is it easy to change, or did I have to rewrite the code?&lt;/p&gt;
+
+&lt;p&gt;My goal here is not to write the best code, develop a product, or anything of the sort. I&amp;rsquo;m trying to apply the concepts learned from the getting started guides and use them enough so that when I read about these topics, I have an intuitive understanding and context to lean on.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-riddles:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;The Riddles&lt;/h3&gt;
+
+&lt;h4 id=&#34;elevator-button-problem:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;Elevator Button Problem&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fivethirtyeight.com/features/can-you-solve-this-elevator-button-puzzle/&#34;&gt;Click here to see the Elevator Button riddle on Riddler&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In a building’s lobby, some number (N) of people get on an elevator that goes to some number (M) of floors. There may be more people than floors, or more floors than people. Each person is equally likely to choose any floor, independently of one another. When a floor button is pushed, it will light up.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/riddler/tree/master/elevator_button&#34;&gt;See simulation code and results&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mix elevator.simluate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/4430436/17579892/af24cf12-5f4e-11e6-9f19-be9357d70f2c.gif&#34; alt=&#34;Elevantor&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;the-grizzly-bear-problem:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;The Grizzly Bear Problem&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fivethirtyeight.com/features/should-the-grizzly-bear-eat-the-salmon/&#34;&gt;Click here to see the Grizzly Problem on Riddler&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A grizzly bear stands in the shallows of a river during salmon spawning season. Precisely once every hour, a fish swims within its reach. The bear can either catch the fish and eat it, or let it swim past to safety. This grizzly is, as many grizzlies are, persnickety. It’ll only eat fish that are at least as big as every fish it ate before.&lt;/p&gt;
+
+&lt;p&gt;Each fish weighs some amount, randomly and uniformly distributed between 0 and 1 kilogram. (Each fish’s weight is independent of the others, and the skilled bear can tell how much each weighs just by looking at it.) The bear wants to maximize its intake of salmon, as measured in kilograms. Suppose the bear’s fishing expedition is two hours long. Under what circumstances should it eat the first fish within its reach? What if the expedition is three hours long?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/riddler/tree/master/grizzly_problem&#34;&gt;See simulation code and results&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mix grizzly.simluate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/bennycwong/riddler/raw/master/grizzly_problem/mix_grizzly_simulate.gif&#34; alt=&#34;mix grizzly.simulate&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Git Rebase: Getting Started</title>
@@ -416,7 +498,7 @@ Below are some of my favorites.
 
 &lt;p&gt;My name is Benny C. Wong.&lt;br /&gt;
 I&amp;rsquo;m software engineer at currently working for Dollar Shave Club.&lt;br /&gt;
-I write about software. I also occasionally write &lt;a href=&#34;../primers&#34;&gt;primers&lt;/a&gt;.&lt;/p&gt;
+I write about software and meta-learning. I also occasionally write &lt;a href=&#34;../primers&#34;&gt;primers&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://c2.staticflickr.com/8/7715/27377489346_60e3ce9aa7_c.jpg&#34; /&gt;&lt;/p&gt;
 
@@ -564,6 +646,39 @@ A Dashboard of cute animals. You can see it running at &lt;a href=&#34;https://d
 &lt;h5 id=&#34;audio-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Audio (Coming Soon)&lt;/h5&gt;
 
 &lt;h5 id=&#34;mens-style-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Mens Style (Coming Soon)&lt;/h5&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://bennycwong.github.io/scratch-pad/posts-to-write/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bennycwong.github.io/scratch-pad/posts-to-write/</guid>
+      <description>&lt;p&gt;This is a list of blog posts to write&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Git reset&lt;/li&gt;
+&lt;li&gt;Pattern Matching in Elixir&lt;/li&gt;
+&lt;li&gt;Simulations in Elixir&lt;/li&gt;
+&lt;li&gt;The Most used tools in Linux&lt;/li&gt;
+&lt;li&gt;O Notation Illustrated&lt;/li&gt;
+&lt;li&gt;Caching is like a multiplication table&lt;/li&gt;
+&lt;li&gt;Space time trade-off&lt;/li&gt;
+&lt;li&gt;Pipe operator in Elixir, a new way of thinking&lt;/li&gt;
+&lt;li&gt;Adventures in learning R
+10.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://bennycwong.github.io/scratch-pad/wip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bennycwong.github.io/scratch-pad/wip/</guid>
+      <description>&lt;p&gt;Personal Brand&lt;/p&gt;
 </description>
     </item>
     

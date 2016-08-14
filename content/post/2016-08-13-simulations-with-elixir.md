@@ -14,14 +14,16 @@ tags = [
   'meta-learning'
 ]
 slug = "losing-at-elixir"
-draft = false
+draft = true
 +++
 
+<!-- Preface -->
+<!-- ![elixir logo](http://elixir-lang.org/images/logo/logo.png)   -->
 ### Preface
 
-We live in an amazing time. The internet has completely revolutionized the way we go about learning something new. If you want to learn how to change the oil on your car, someone probably already made a video and posted it up on youtube.
+The internet has completely revolutionized the way learn. If you want to learn how to change the oil on your car, someone probably already made a video and posted it up on youtube.
 
-For simple tasks, it has never been easier to learn. A quick google search will give you the answer you need most of the time.
+For simple tasks, learn has never been easier. A quick 5-minute google search will give you the answer you need most of the time.
 
 However, when it comes to complex, multi-faceted subjects, such as programming, the story is not so simple.
 
@@ -32,17 +34,7 @@ What we need is an approach to organize the information and structure our learni
 I'm constantly thinking and refining my approach. In my opinion, meta-learning is the most important skill to develop in our careers.
 
 
-
-## The Approach
-
-1. What is it and why learn it
-2. Learn the rules
-3. Lose your first 100 games
-4. Find resources/mentors to help further understanding
-5. Find a community
-6. Teach sub-topics to someone else in plain english  
-
-
+<!-- Intro -->
 
 
 ### Elixir
@@ -51,24 +43,83 @@ For the past few months, I have learning the [elixir](http://elixir-lang.org/) p
 
 Instead, I want to share my approach of learning elixir, and how to apply this approach to anything else.
 
-<img src="http://www.trbimg.com/img-56280ce8/turbine/hc-hm-game-of-go-20151024">
-#### Lose Your First 100 Games of Go as Quickly as Possible
+But first, an analogy...
 
+<!-- Analogy -->
+
+<img src="http://www.trbimg.com/img-56280ce8/turbine/hc-hm-game-of-go-20151024">
+#### Lose Your First 100 Games as Quickly as Possible
+<!--
+Derek and Max, friends since childhood, both want to learn how to play the game of Go. Since they live a couple towns away, they can only see each other 1 month from today. They decide that when see each other, they will play the game. Since both Derek and Max are competitive, they want to win.
+
+Derek, a young man, confident in his intelligence, decides to go to the book store and pick up a book on strategies and tactics. In his free time, he reads and studies the game according to this book.
+
+Max, however, is much more humble in his approach. He goes to a wise master of Go, and asked for some advice on learning the game of Go.
+
+"Lose your first 100 games as quickly as possible.", said the wise sage, and then disappeared into the night, because that's what sages do.
+
+Max went away not sure of what he meant, but had faith that the sage knew what he was talking about.
+
+During the evening, Derek starts to read his book. It's hard work. He doesn't really know what the author means when he mentions x and y terms. It takes time to read, and it's really not all that fun. He reads a chapter a night. He plays a game or two a night, trying to apply the strategies he read about, but they never really came up.
+
+Max, however, starts playing go online with the computer. He doesn't care if he wins or loses, he just plays. Since Max doesn't know any strategies, he lose every game.
+
+After 3 week, Max has played 100 games. He lost every single one of them, although he started to get better towards the end. With a week left before he plays Derek, Max decides to pick up a book on Go. It happens to be the same one that Derek picked up. Max reads it during his lunch breaks at work and continues to play at night.
+
+When Saturday came, Derek and Max finally meet.
+
+Derek, at this point, have been reading the strategies and tactics for a month. Max has only been reading and learning how to win for a week.  
+
+Despite the much shorter time spent on reading strategies and tactics, Max easily beats Derek. Max is the far stronger player.
+
+While Derek jumped right in trying to figure out how to win, Max took some time getting familiar with the landscape.  
+
+By doing so, Max gained an intuitive understanding of the game because he saw a lot of scenarios. He was able to put the strategies he read about into context, making that phase of learning much power impactful.   
+ -->
 
 If you've ever tried to learn the game go, it's likely that you've heard this advice. Instead of digging deep into strategies and tactics, the goal of this first phase is simply to get familiar with how to keep score, get used to looking at the shapes that come up, and familiarize yourself with the rules. Winning and Losing simply doesn't matter.  
 
-After you play enough games, learning strategies and tactics will make a lot more sense, and you can shift your focus to how to win.  
+After you play enough games, you can shift your attention to learning strategies and tactics. This is where you learn how to win. This is where you want to spend your time and effort. In a sense, you never get out of this phase.  
 
-By doing it this way, you will get better faster getting the most out of learning the strategies and tactics.  
+Learning strategies and tactics is __hard work__. If you skip the first phase, learning how to get better would be mixed in with learning how to play the game. This makes the hard work phase frustrating and discouraging. There are terms and phrases you don't understand. It takes a lot of brain power just to understand the context of the strategy or tactics.
 
-This advice can be applied to learning how to program or learning a new programming language as well.  
+When faced with __hard work__, if we don't have sufficient drive, we often just throw our hands up in the air just give up. If we mix in hard work with the
+
+The goal of losing the first 100 games to develop and intuition for the basics of the game. If you know what it means to win, what an advantage looks like, how to read shapes, learning the strategies and tactics becomes fun!
+
+This advice can be applied to learning how to program or learning a new programming language as well.
+
+<!-- Diagram -->
+### General Approach, Visualized  
+
 Learn enough to play the first game -> play a lot of games ->
 
-#### 0. Why learn ____? (A few hours)
+
+<!--
+## The Approach
+
+1. What is it and why learn it
+2. Learn the rules
+3. Lose your first 100 games
+4. Find resources/mentors to help further understanding
+5. Find a community
+6. Teach sub-topics to someone else in plain english  / give a talk
+ -->
+
+ <!-- Example -->
+
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Extreme_Programming.svg/2000px-Extreme_Programming.svg.png">
+
+
+
+#### 0. Why learn Elixir? (A few hours)
 
 Before I decide on learning a language, I must answer the "why" question. What is it about Elixir that gets me excited?
 
 Resources: ELI5
+
+### Applied to Elixir
 
 #### 1. Learning the rules (A couple days)
 
@@ -78,13 +129,16 @@ This achieved by reading the official documentation,
 
 The goal of this stage is to knowing enough to play you first game.
 
+Explore basics. Common terms.
+
+
 motivation
 
 Discouraged at this stage. Don't spend too long here.
 
 Resources: Official Documentation, Tutorials, Videos
 
-#### Losing at Elixir
+#### 2. Losing at Elixir
 
 The goal here is not to write good software. It's to write software and try to use the tools.
 
@@ -136,4 +190,4 @@ __Autonomy__: No one is telling me what to learn. I learn new topics because I'm
 
 __Mastery__: Although I'm not mastering any specific skill when I'm learning something new, I am developing a mastery on meta-learning.  
 
-__Sense of Purpose__: By developing, refining, and communicating what I've learned about meta-learning, I hope to help others become better learners. I think people are far more capable than they realize. I want to help get you to the next level.
+__Purpose__: By developing, refining, and communicating what I've learned about meta-learning, I hope to help others become better learners. I think people are far more capable than they realize. I want to help get you to the next level.

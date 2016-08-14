@@ -1,0 +1,12 @@
+This is a list of blog posts to write
+
+1. Git reset
+2. Pattern Matching in Elixir
+3. Simulations in Elixir
+4. The Most used tools in Linux
+5. O Notation Illustrated
+6. Caching is like a multiplication table
+7. Space time trade-off
+8. Pipe operator in Elixir, a new way of thinking
+9. Adventures in learning R
+10.
