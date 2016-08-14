@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scratch-pads on Blog</title>
+    <link>https://bennycwong.github.io/scratch-pad/</link>
+    <description>Recent content in Scratch-pads on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://bennycwong.github.io/scratch-pad/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title></title>
+      <link>https://bennycwong.github.io/scratch-pad/posts-to-write/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bennycwong.github.io/scratch-pad/posts-to-write/</guid>
+      <description>&lt;p&gt;This is a list of blog posts to write&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Git reset&lt;/li&gt;
+&lt;li&gt;Pattern Matching in Elixir&lt;/li&gt;
+&lt;li&gt;Simulations in Elixir&lt;/li&gt;
+&lt;li&gt;The Most used tools in Linux&lt;/li&gt;
+&lt;li&gt;O Notation Illustrated&lt;/li&gt;
+&lt;li&gt;Caching is like a multiplication table&lt;/li&gt;
+&lt;li&gt;Space time trade-off&lt;/li&gt;
+&lt;li&gt;Pipe operator in Elixir, a new way of thinking&lt;/li&gt;
+&lt;li&gt;Adventures in learning R
+10.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://bennycwong.github.io/scratch-pad/wip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bennycwong.github.io/scratch-pad/wip/</guid>
+      <description>&lt;p&gt;Personal Brand&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,8 +3,13 @@
   
   <url>
     <loc>https://bennycwong.github.io/</loc>
-    <lastmod>2016-08-03T19:19:37-07:00</lastmod>
+    <lastmod>2016-08-13T11:20:18-07:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bennycwong.github.io/post/riddler-simulations-in-elixir/</loc>
+    <lastmod>2016-08-13T11:20:18-07:00</lastmod>
   </url>
   
   <url>
@@ -45,6 +50,14 @@
   <url>
     <loc>https://bennycwong.github.io/primers/</loc>
     <lastmod>2015-06-20T14:02:37+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bennycwong.github.io/scratch-pad/posts-to-write/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bennycwong.github.io/scratch-pad/wip/</loc>
   </url>
   
 </urlset>

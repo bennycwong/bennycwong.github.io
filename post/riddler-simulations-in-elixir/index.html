@@ -1,0 +1,302 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Benny C. Wong">
+		<meta name="description" content="">
+		<meta name="generator" content="Hugo 0.15" />
+		<title>Puzzle  |&gt; Simulations in Elixir &middot; Blog</title>
+		<link rel="shortcut icon" href="https://bennycwong.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://bennycwong.github.io/css/style.css">
+		<link rel="stylesheet" href="https://bennycwong.github.io/css/highlight.css">
+		<link rel="stylesheet" href="https://bennycwong.github.io/css/monosocialiconsfont.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		
+		<link href="https://bennycwong.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Blog" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	<a href='https://bennycwong.github.io/'>Blog</a>
+
+
+
+	<a href='https://bennycwong.github.io/primers'>Primers</a>
+
+	<a href='https://bennycwong.github.io/open-source'>Open Source</a>
+
+	<a href='https://bennycwong.github.io/photography'>Photos</a>
+
+	<a href='https://bennycwong.github.io/about'>About</a>
+
+	
+	<a  href="https://bennycwong.github.io/index.xml">RSS</a>
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>Puzzle  |&gt; Simulations in Elixir</h1>
+                    <h2 class="headline">August 13, 2016</h2>
+                </header>
+
+                <section id="post-body">
+                    
+
+<p>For the past few months, I have learning the <a href="http://elixir-lang.org/">elixir</a> programming language. Much has been written about Elixir, so I won&rsquo;t go into too much details about the language itself.</p>
+
+<p>Instead, I want to share my journey learning elixir. The first stage of my programming language learning is writing a lot of code, with little to no self consciousness about writing &ldquo;bad code&rdquo;. This is in no way the best way to write elixir (probably), but it&rsquo;s the first step to take me from <strong>knowing about</strong> something to <strong>knowing something</strong>. I plan to revisit these in the future as I learn more through programming more in elixir.</p>
+
+<h4 id="the-riddler:f20b5269d4afb8ee8f2457a6c3dfcc79">The Riddler</h4>
+
+<p>The Riddler is a series of puzzles written by the folks at <a href="https://fivethirtyeight.com/tag/the-riddler/">Five Thirty Eight</a>. Every week or so, they publish a new riddle, as well as post answers to the previous week&rsquo;s puzzles.</p>
+
+<p>The riddles/puzzles are statistical of nature. The answer is usually a math formula or some way to express the probability or expected value of it.</p>
+
+<p>I think there are two ways to solve these problems.</p>
+
+<ol>
+<li><p>Think about the problem like a statistician and break down the problem in its own smaller components. Solve for the expected value and probability. Finally combine it all together.</p></li>
+
+<li><p>Build a simulation and run it a lot of times.</p></li>
+</ol>
+
+<p>While the first approach is probably the smarter way to go, building simulations is fun. Plus, if the proof is in the pudding. If my simulation is done right, it becomes the test case to <strong>verify the math from the first approach</strong>.</p>
+
+<p>Below are two simulations I wrote in Elixir to solve the puzzles on <a href="https://fivethirtyeight.com/tag/the-riddler/">The Riddler at fivethirtyeight</a>.</p>
+
+<h4 id="writing-simulations:f20b5269d4afb8ee8f2457a6c3dfcc79">Writing Simulations</h4>
+
+<p>I often hear this advice: you learn more when you build your own projects, instead of just following along with tutorials. This gives us two advantage: you care more about building it, thus sustaining your <strong>motivation</strong>, and it requires you to do more than just follow steps. <strong>It makes you think.</strong></p>
+
+<p>I have observed this to be true. However, coming up with what projects to write is hard work. Seriously hard work. People do this as a career (Product Management).</p>
+
+<p>The hard work of trying to figure out what to build is <strong>not necessary when the purpose of the project is to learn a new technologies</strong>. Hard problems are good, but we need to focus on the right problems.</p>
+
+<p>Since my goal at this phase of learning elixir is writing a lot of programs, I needed a problem that is already defined. Riddler puzzles are great because the problem is given to me. I don&rsquo;t have to spend energy trying to figure out <strong>what</strong> to write. I just need to figure out <strong>how</strong> to write it.</p>
+
+<p>Also, I really like brain teasers and puzzles. These kinds of problems are <strong>fun for me</strong>.</p>
+
+<p>In addition, the fine folks at fivethirtyeight also provide modifications to the problem. This gives a chance to try and refactor and change my code. This is a good time to see how well I abstracted the code. Is it easy to change, or did I have to rewrite the code?</p>
+
+<p>My goal here is not to write the best code, develop a product, or anything of the sort. I&rsquo;m trying to apply the concepts learned from the getting started guides and use them enough so that when I read about these topics, I have an intuitive understanding and context to lean on.</p>
+
+<h3 id="the-riddles:f20b5269d4afb8ee8f2457a6c3dfcc79">The Riddles</h3>
+
+<h4 id="elevator-button-problem:f20b5269d4afb8ee8f2457a6c3dfcc79">Elevator Button Problem</h4>
+
+<p><a href="https://fivethirtyeight.com/features/can-you-solve-this-elevator-button-puzzle/">Click here to see the Elevator Button riddle on Riddler</a></p>
+
+<blockquote>
+<p>In a building’s lobby, some number (N) of people get on an elevator that goes to some number (M) of floors. There may be more people than floors, or more floors than people. Each person is equally likely to choose any floor, independently of one another. When a floor button is pushed, it will light up.</p>
+</blockquote>
+
+<p><a href="https://github.com/bennycwong/riddler/tree/master/elevator_button">See simulation code and results</a></p>
+
+<pre><code>$ mix elevator.simluate
+</code></pre>
+
+<p><img src="https://cloud.githubusercontent.com/assets/4430436/17579892/af24cf12-5f4e-11e6-9f19-be9357d70f2c.gif" alt="Elevantor" /></p>
+
+<h4 id="the-grizzly-bear-problem:f20b5269d4afb8ee8f2457a6c3dfcc79">The Grizzly Bear Problem</h4>
+
+<p><a href="https://fivethirtyeight.com/features/should-the-grizzly-bear-eat-the-salmon/">Click here to see the Grizzly Problem on Riddler</a></p>
+
+<blockquote>
+<p>A grizzly bear stands in the shallows of a river during salmon spawning season. Precisely once every hour, a fish swims within its reach. The bear can either catch the fish and eat it, or let it swim past to safety. This grizzly is, as many grizzlies are, persnickety. It’ll only eat fish that are at least as big as every fish it ate before.</p>
+
+<p>Each fish weighs some amount, randomly and uniformly distributed between 0 and 1 kilogram. (Each fish’s weight is independent of the others, and the skilled bear can tell how much each weighs just by looking at it.) The bear wants to maximize its intake of salmon, as measured in kilograms. Suppose the bear’s fishing expedition is two hours long. Under what circumstances should it eat the first fish within its reach? What if the expedition is three hours long?</p>
+</blockquote>
+
+<p><a href="https://github.com/bennycwong/riddler/tree/master/grizzly_problem">See simulation code and results</a></p>
+
+<pre><code>$ mix grizzly.simluate
+</code></pre>
+
+<p><img src="https://github.com/bennycwong/riddler/raw/master/grizzly_problem/mix_grizzly_simulate.gif" alt="mix grizzly.simulate" /></p>
+
+                </section>
+                <section>
+                  <hr>
+                  <h5>Tags:</h5>
+
+                  <ul class="tags">
+                    
+                      <li><a class="tag" href="/tags/fivethirtyeight">fivethirtyeight</a></li>
+                    
+                      <li><a class="tag" href="/tags/elixir">elixir</a></li>
+                    
+                      <li><a class="tag" href="/tags/mix">mix</a></li>
+                    
+                      <li><a class="tag" href="/tags/learning">learning</a></li>
+                    
+                      <li><a class="tag" href="/tags/open-source">open source</a></li>
+                    
+                      <li><a class="tag" href="/tags/programming-languages">programming languages</a></li>
+                    
+                  </ul>
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/Your%20Twitter%20account">
+                        <img class="avatar" src="https://bennycwong.github.io/images/avatar.png">
+                        <div>
+                            <span class="dark">Benny C. Wong</span>
+                            <span>I&#39;m a software engineer.</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fbennycwong.github.io%2fpost%2friddler-simulations-in-elixir%2f - Puzzle%20%20%7c%3e%20Simulations%20in%20Elixir by @Your%20Twitter%20account"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bennycwong-blog';
+    var disqus_identifier = 'https:\/\/bennycwong.github.io\/post\/riddler-simulations-in-elixir\/';
+    var disqus_title = 'Puzzle  |\x3e Simulations in Elixir';
+    var disqus_url = 'https:\/\/bennycwong.github.io\/post\/riddler-simulations-in-elixir\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/post/riddler-simulations-in-elixir/">Puzzle  |&gt; Simulations in Elixir<aside class="dates">Aug 13, 2016</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/post/git-rebase-getting-started/">Git Rebase: Getting Started<aside class="dates">Aug 3, 2016</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/post/ember-router-scroll/">Introducing ember-router-scroll<aside class="dates">Aug 1, 2016</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/photography/">Photography<aside class="dates">Jul 26, 2016</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/speaking/">Speaking<aside class="dates">Jul 26, 2016</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/primers/feynman-technique/">The Feynman Technique<aside class="dates">Jul 26, 2016</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/open-source/">Open Source<aside class="dates">Jun 20, 2015</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/primers/">Primers<aside class="dates">Jun 20, 2015</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://bennycwong.github.io/scratch-pad/posts-to-write/"><aside class="dates">Jan 1, 0001</aside></a>
+        </li>
+        
+   
+</ul>
+
+            <footer id="footer">
+    
+        
+<div id="social">
+    
+    <a class="symbol" href="https://www.facebook.com/">
+        circlefacebook
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/bennycwong">
+        circlegithub
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/bennycwong">
+        circletwitterbird
+    </a>
+    
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2016 Benny C. Wong
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://bennycwong.github.io/js/main.js"></script>
+<script src="https://bennycwong.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-82056411-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+    </body>
+</html>
