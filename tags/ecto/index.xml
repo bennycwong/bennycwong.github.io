@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ecto on Blog</title>
+    <link>https://bennycwong.github.io/tags/ecto/</link>
+    <description>Recent content in Ecto on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Aug 2016 12:41:17 -0700</lastBuildDate>
+    <atom:link href="https://bennycwong.github.io/tags/ecto/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using Multiple DBs in Phoenix</title>
+      <link>https://bennycwong.github.io/post/multiple-dbs-in-phoenix/</link>
+      <pubDate>Sat, 20 Aug 2016 12:41:17 -0700</pubDate>
+      
+      <guid>https://bennycwong.github.io/post/multiple-dbs-in-phoenix/</guid>
+      <description>
+
+&lt;p&gt;The first phoenix project I&amp;rsquo;ve worked on is an internal tool at Dollar Shave Club. It connects to our existing database and does some work on it.&lt;/p&gt;
+
+&lt;p&gt;Now that the application is up and running, I&amp;rsquo;m starting to explore how to handle user authentication and logging of who made what changes, but without touching our main database.&lt;/p&gt;
+
+&lt;p&gt;I want to setup a separate database for this internal application.&lt;/p&gt;
+
+&lt;p&gt;It turns out it&amp;rsquo;s pretty trivial to setup a second database in Phoenix.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s are the steps.&lt;br /&gt;
+In this example, I&amp;rsquo;m going to define &lt;strong&gt;Repo&lt;/strong&gt; as my main database, and a &lt;strong&gt;RepoPostgres&lt;/strong&gt;, a postgres DB that I&amp;rsquo;m using the handle concerns that are unrelated to to main database&lt;/p&gt;
+
+&lt;h4 id=&#34;1-define-the-second-database-in-your-config-file:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;1. Define the second database in your config file:&lt;/h4&gt;
+
+&lt;p&gt;//project/config/{env}.exs&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Configure your database
+config :demo, Demo.Repo,
+  adapter: Ecto.Adapters.MySQL,
+  username: &amp;quot;root&amp;quot;,
+  password: &amp;quot;root&amp;quot;,
+  database: &amp;quot;demo_dev&amp;quot;,
+  hostname: &amp;quot;localhost&amp;quot;,
+  pool_size: 10
+
+config :demo, Demo.RepoPostgres,
+  adapter: Ecto.Adapters.Postgres,
+  username: &amp;quot;postgres&amp;quot;,
+  password: &amp;quot;postgres&amp;quot;,
+  database: &amp;quot;demo_dev&amp;quot;,
+  hostname: &amp;quot;localhost&amp;quot;,
+  pool_size: 10
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;2-create-a-new-repo-file-in-lib:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;2. Create a new repo file in lib&lt;/h4&gt;
+
+&lt;p&gt;//project/lib/demo/repo_postgres.ex&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;defmodule Demo.RepoPostgres do
+  use Ecto.Repo, otp_app: :demo
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;3-add-the-new-database-repo-in-supervision-tree-on-app-start:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;3. Add the new database repo in supervision tree on app start&lt;/h4&gt;
+
+&lt;p&gt;//project/lib/demo.ex&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;children = [
+      # Start the Ecto repository
+      supervisor(Demo.Repo, []),
+      supervisor(Demo.RepoPostgres, []), #&amp;lt;---- Add new line here
+
+      # Start the endpoint when the application starts
+      supervisor(Demo.Endpoint, []),
+      # Start your own worker by calling: Demo.Worker.start_link(arg1, arg2, arg3)
+      # worker(Demo.Worker, [arg1, arg2, arg3]),
+    ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;4-use-it:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;4. Use it!&lt;/h4&gt;
+
+&lt;p&gt;In any place where you want to use the second database, simply use that module.&lt;/p&gt;
+
+&lt;p&gt;For example, the controller:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;defmodule Demo.UserController do
+  use Demo.Web, :controller
+  alias Demo.User
+  alias Demo.RepoPostgres
+
+  def index(conn, _params) do
+    users = RepoPostgres.all(User)
+    render conn, &amp;quot;index.html&amp;quot;, users: users
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;conclusion:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;Conclusion&lt;/h4&gt;
+
+&lt;p&gt;I think this is one of the a-ha moments in my journey using elixir.&lt;/p&gt;
+
+&lt;p&gt;After reading through the first half of &lt;a href=&#34;https://pragprog.com/book/phoenix/programming-phoenix&#34;&gt;Programming Phoenix by Chris McCord&lt;/a&gt;, I theorized that this is how one would add a second database. And it turns how, that&amp;rsquo;s exactly how to do it. It was a trivial amount of work, and it was easy to reason about.&lt;/p&gt;
+
+&lt;p&gt;There were no surprises.&lt;/p&gt;
+
+&lt;p&gt;It worked as expected.&lt;/p&gt;
+
+&lt;p&gt;I think this is &lt;a href=&#34;https://en.wikipedia.org/wiki/Principle_of_least_astonishment&#34;&gt;Principle of Least Astonishment (POLA)&lt;/a&gt;  in action.&lt;/p&gt;
+
+&lt;p&gt;Hats off to the Phoenix and Ecto teams for making this so simple, and to Chris for his excellent book.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

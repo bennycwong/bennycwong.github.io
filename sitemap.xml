@@ -3,8 +3,13 @@
   
   <url>
     <loc>https://bennycwong.github.io/</loc>
-    <lastmod>2016-08-13T11:20:18-07:00</lastmod>
+    <lastmod>2016-08-20T12:41:17-07:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bennycwong.github.io/post/multiple-dbs-in-phoenix/</loc>
+    <lastmod>2016-08-20T12:41:17-07:00</lastmod>
   </url>
   
   <url>
