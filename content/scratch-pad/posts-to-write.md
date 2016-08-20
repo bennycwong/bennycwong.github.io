@@ -1,7 +1,7 @@
 This is a list of blog posts to write
 
 1. Git reset
-2. Pattern Matching in Elixir
+2. Pattern Matching in Elixir -> Talk
 3. Simulations in Elixir
 4. The Most used tools in Linux
 5. O Notation Illustrated
@@ -11,3 +11,5 @@ This is a list of blog posts to write
 9. Adventures in learning R
 10. Standardizing workflows with dotfiles .atom repo
 11. What is an API, in plain english
+12. Dependecy Injection
+13. Elixir Stream
