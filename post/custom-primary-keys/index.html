@@ -7,7 +7,7 @@
 		<meta name="author" content="Benny C. Wong">
 		<meta name="description" content="">
 		<meta name="generator" content="Hugo 0.15" />
-		<title> &middot; Blog</title>
+		<title>Dealing with Legacy Databases &middot; Blog</title>
 		<link rel="shortcut icon" href="https://bennycwong.github.io/images/favicon.ico">
 		<link rel="stylesheet" href="https://bennycwong.github.io/css/style.css">
 		<link rel="stylesheet" href="https://bennycwong.github.io/css/highlight.css">
@@ -43,27 +43,158 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1></h1>
-                    <h2 class="headline">January 1, 0001</h2>
+                    <h1>Dealing with Legacy Databases</h1>
+                    <h2 class="headline">August 23, 2016</h2>
                 </header>
 
                 <section id="post-body">
-                    <p>This is a list of blog posts to write</p>
+                    
 
-<ol>
-<li>Git reset</li>
-<li>Pattern Matching in Elixir -&gt; Talk</li>
-<li>The Most used tools in Linux</li>
-<li>O Notation Illustrated</li>
-<li>Caching is like a multiplication table</li>
-<li>Space time trade-off</li>
-<li>Pipe operator in Elixir, a new way of thinking</li>
-<li>Adventures in learning R</li>
-<li>Standardizing workflows with dotfiles .atom repo</li>
-<li>What is an API, in plain english</li>
-<li>Dependency Injection</li>
-<li>Elixir Stream</li>
-</ol>
+<p>Ergast.com is a webservice which provides a database of Historical F1 Data, starting from the 1950 season until today.</p>
+
+<p>They also kindly provide a <a href="http://ergast.com/mrd/db/">mysql database image</a> for download. This database is the source of this toy project I&rsquo;ve been working on: the idea of which is provide a <a href="http://jsonapi.org/">{json:api}</a> compliant API as a way for me to practice working with Elixir and Phoenix.</p>
+
+<h4 id="challenges:deb8358274790b4550136b5a3dbedc8c">Challenges</h4>
+
+<p>Unfortunately, the mysql database image uses a non standard primary key for each table.</p>
+
+<p>Here&rsquo;s a sample of the <strong>races</strong> table.</p>
+
+<table>
+<thead>
+<tr>
+<th>raceId</th>
+<th>year</th>
+<th>round</th>
+<th>circuitId</th>
+<th>name</th>
+<th>date</th>
+<th>time</th>
+<th>url</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>2009</td>
+<td>1</td>
+<td>1</td>
+<td>Australian Grand Prix</td>
+<td>2009-03-29</td>
+<td>06:00:00</td>
+<td><a href="http://en.wikipedia.org/wiki/2009_Australian_Grand_Prix">http://en.wikipedia.org/wiki/2009_Australian_Grand_Prix</a></td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>2009</td>
+<td>2</td>
+<td>2</td>
+<td>Malaysian Grand Prix</td>
+<td>2009-04-05</td>
+<td>09:00:00</td>
+<td><a href="http://en.wikipedia.org/wiki/2009_Malaysian_Grand_Prix">http://en.wikipedia.org/wiki/2009_Malaysian_Grand_Prix</a></td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>2009</td>
+<td>3</td>
+<td>17</td>
+<td>Chinese Grand Prix</td>
+<td>2009-04-19</td>
+<td>07:00:00</td>
+<td><a href="http://en.wikipedia.org/wiki/2009_Chinese_Grand_Prix">http://en.wikipedia.org/wiki/2009_Chinese_Grand_Prix</a></td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>2009</td>
+<td>4</td>
+<td>3</td>
+<td>Bahrain Grand Prix</td>
+<td>2009-04-26</td>
+<td>12:00:00</td>
+<td><a href="http://en.wikipedia.org/wiki/2009_Bahrain_Grand_Prix">http://en.wikipedia.org/wiki/2009_Bahrain_Grand_Prix</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>Notice that the primary key for this table is <strong>raceId</strong>, and the association to the seasons table is <strong>year</strong>.</p>
+
+<h4 id="setting-custom-primary-keys:deb8358274790b4550136b5a3dbedc8c">Setting Custom Primary Keys</h4>
+
+<p>Using the model generator in Phoenix, you&rsquo;ll end up with something like this:</p>
+
+<p>//web/models/race.ex</p>
+
+<pre><code>schema &quot;races&quot; do
+  field :round, :integer
+  field :name, :string
+  field :url, :string
+  field :date, Ecto.Date
+  field :time, Ecto.Time
+  timestamps()
+
+  belongs_to :circuit, PhoenixF1JsonApi.Circuit
+  belongs_to :season, PhoenixF1JsonApi.Season
+end
+</code></pre>
+
+<p>However, this will not work, because this assumes the primary key for the race table is <em>id</em>, and the associations are more sane, such as <strong>season_id</strong> and <strong>circuit_id</strong>.</p>
+
+<p>In order to set it up correct, I had to do the following:</p>
+
+<p>//web/models/race.ex</p>
+
+<pre><code>@primary_key {:raceId, :integer, []}
+@derive {Phoenix.Param, key: :raceId}
+schema &quot;races&quot; do
+  field :round, :integer
+  field :name, :string
+  field :date, Ecto.Date
+  field :time, Ecto.Time
+  field :url, :string
+
+  belongs_to :circuit, PhoenixF1JsonApi.Circuit, foreign_key: :circuitId
+  belongs_to :season, PhoenixF1JsonApi.Season, foreign_key: :year
+end
+</code></pre>
+
+<h4 id="let-s-break-down-each-step:deb8358274790b4550136b5a3dbedc8c">Let&rsquo;s break down each step.</h4>
+
+<pre><code>@primary_key {:raceId, :integer, []}
+</code></pre>
+
+<p>Here I&rsquo;m defining the primary key for this schema as raceId, and it&rsquo;s an intger.</p>
+
+<pre><code>@derive {Phoenix.Param, key: :raceId}
+</code></pre>
+
+<p>Next, I set the @derive to use raceID as the param key. This is the ID that&rsquo;s going to be used in the routes.</p>
+
+<pre><code>belongs_to :circuit, PhoenixF1JsonApi.Circuit, foreign_key: :circuitId
+belongs_to :season, PhoenixF1JsonApi.Season, foreign_key: :year
+</code></pre>
+
+<p>Next, I had to asscoiate the foreign_keys for the circuit and season tables to those table&rsquo;s primary key.</p>
+
+<pre><code>timestamps()
+</code></pre>
+
+<p>Finally I had to remove the <strong>timestamps()</strong> line because the data doesn&rsquo;t have updated_at/created_at.</p>
+
+<h4 id="conclusion:deb8358274790b4550136b5a3dbedc8c">Conclusion</h4>
+
+<p>While it&rsquo;s not difficult to use non standard keys in Phoenix, It&rsquo;s really not preferred. If you have the ability to reformat the data, I highly recommend it. If not, there are ways to deal with this problem.</p>
+
+<p>The main takaway for me is that the phoenix framework guides are very good. I followed the instructions here:
+<a href="http://www.phoenixframework.org/docs/ecto-custom-primary-keys">Ecto Custom Primary Keys</a></p>
+
+<h4 id="open-source:deb8358274790b4550136b5a3dbedc8c">Open Source</h4>
+
+<p>See my project on <a href="https://github.com/bennycwong/phoenix_f1_json_api">Github</a>.</p>
 
                 </section>
                 <section>
@@ -71,6 +202,14 @@
                   <h5>Tags:</h5>
 
                   <ul class="tags">
+                    
+                      <li><a class="tag" href="/tags/elixir">elixir</a></li>
+                    
+                      <li><a class="tag" href="/tags/ecto">ecto</a></li>
+                    
+                      <li><a class="tag" href="/tags/phoenix">phoenix</a></li>
+                    
+                      <li><a class="tag" href="/tags/learning">learning</a></li>
                     
                   </ul>
                 </section>
@@ -84,7 +223,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fbennycwong.github.io%2fscratch-pad%2fposts-to-write%2f -  by @Your%20Twitter%20account"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fbennycwong.github.io%2fpost%2fcustom-primary-keys%2f - Dealing%20with%20Legacy%20Databases by @Your%20Twitter%20account"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -100,9 +239,9 @@
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'bennycwong-blog';
-    var disqus_identifier = 'https:\/\/bennycwong.github.io\/scratch-pad\/posts-to-write\/';
-    var disqus_title = '';
-    var disqus_url = 'https:\/\/bennycwong.github.io\/scratch-pad\/posts-to-write\/';
+    var disqus_identifier = 'https:\/\/bennycwong.github.io\/post\/custom-primary-keys\/';
+    var disqus_title = 'Dealing with Legacy Databases';
+    var disqus_url = 'https:\/\/bennycwong.github.io\/post\/custom-primary-keys\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

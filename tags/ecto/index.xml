@@ -6,8 +6,164 @@
     <description>Recent content in Ecto on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Aug 2016 12:41:17 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 23 Aug 2016 12:27:17 -0700</lastBuildDate>
     <atom:link href="https://bennycwong.github.io/tags/ecto/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Dealing with Legacy Databases</title>
+      <link>https://bennycwong.github.io/post/custom-primary-keys/</link>
+      <pubDate>Tue, 23 Aug 2016 12:27:17 -0700</pubDate>
+      
+      <guid>https://bennycwong.github.io/post/custom-primary-keys/</guid>
+      <description>
+
+&lt;p&gt;Ergast.com is a webservice which provides a database of Historical F1 Data, starting from the 1950 season until today.&lt;/p&gt;
+
+&lt;p&gt;They also kindly provide a &lt;a href=&#34;http://ergast.com/mrd/db/&#34;&gt;mysql database image&lt;/a&gt; for download. This database is the source of this toy project I&amp;rsquo;ve been working on: the idea of which is provide a &lt;a href=&#34;http://jsonapi.org/&#34;&gt;{json:api}&lt;/a&gt; compliant API as a way for me to practice working with Elixir and Phoenix.&lt;/p&gt;
+
+&lt;h4 id=&#34;challenges:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Challenges&lt;/h4&gt;
+
+&lt;p&gt;Unfortunately, the mysql database image uses a non standard primary key for each table.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a sample of the &lt;strong&gt;races&lt;/strong&gt; table.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;raceId&lt;/th&gt;
+&lt;th&gt;year&lt;/th&gt;
+&lt;th&gt;round&lt;/th&gt;
+&lt;th&gt;circuitId&lt;/th&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;date&lt;/th&gt;
+&lt;th&gt;time&lt;/th&gt;
+&lt;th&gt;url&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2009&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Australian Grand Prix&lt;/td&gt;
+&lt;td&gt;2009-03-29&lt;/td&gt;
+&lt;td&gt;06:00:00&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/2009_Australian_Grand_Prix&#34;&gt;http://en.wikipedia.org/wiki/2009_Australian_Grand_Prix&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2009&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Malaysian Grand Prix&lt;/td&gt;
+&lt;td&gt;2009-04-05&lt;/td&gt;
+&lt;td&gt;09:00:00&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/2009_Malaysian_Grand_Prix&#34;&gt;http://en.wikipedia.org/wiki/2009_Malaysian_Grand_Prix&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;2009&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;Chinese Grand Prix&lt;/td&gt;
+&lt;td&gt;2009-04-19&lt;/td&gt;
+&lt;td&gt;07:00:00&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/2009_Chinese_Grand_Prix&#34;&gt;http://en.wikipedia.org/wiki/2009_Chinese_Grand_Prix&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;2009&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Bahrain Grand Prix&lt;/td&gt;
+&lt;td&gt;2009-04-26&lt;/td&gt;
+&lt;td&gt;12:00:00&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/2009_Bahrain_Grand_Prix&#34;&gt;http://en.wikipedia.org/wiki/2009_Bahrain_Grand_Prix&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Notice that the primary key for this table is &lt;strong&gt;raceId&lt;/strong&gt;, and the association to the seasons table is &lt;strong&gt;year&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;setting-custom-primary-keys:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Setting Custom Primary Keys&lt;/h4&gt;
+
+&lt;p&gt;Using the model generator in Phoenix, you&amp;rsquo;ll end up with something like this:&lt;/p&gt;
+
+&lt;p&gt;//web/models/race.ex&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;schema &amp;quot;races&amp;quot; do
+  field :round, :integer
+  field :name, :string
+  field :url, :string
+  field :date, Ecto.Date
+  field :time, Ecto.Time
+  timestamps()
+
+  belongs_to :circuit, PhoenixF1JsonApi.Circuit
+  belongs_to :season, PhoenixF1JsonApi.Season
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, this will not work, because this assumes the primary key for the race table is &lt;em&gt;id&lt;/em&gt;, and the associations are more sane, such as &lt;strong&gt;season_id&lt;/strong&gt; and &lt;strong&gt;circuit_id&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In order to set it up correct, I had to do the following:&lt;/p&gt;
+
+&lt;p&gt;//web/models/race.ex&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@primary_key {:raceId, :integer, []}
+@derive {Phoenix.Param, key: :raceId}
+schema &amp;quot;races&amp;quot; do
+  field :round, :integer
+  field :name, :string
+  field :date, Ecto.Date
+  field :time, Ecto.Time
+  field :url, :string
+
+  belongs_to :circuit, PhoenixF1JsonApi.Circuit, foreign_key: :circuitId
+  belongs_to :season, PhoenixF1JsonApi.Season, foreign_key: :year
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;let-s-break-down-each-step:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Let&amp;rsquo;s break down each step.&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;@primary_key {:raceId, :integer, []}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here I&amp;rsquo;m defining the primary key for this schema as raceId, and it&amp;rsquo;s an intger.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@derive {Phoenix.Param, key: :raceId}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, I set the @derive to use raceID as the param key. This is the ID that&amp;rsquo;s going to be used in the routes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;belongs_to :circuit, PhoenixF1JsonApi.Circuit, foreign_key: :circuitId
+belongs_to :season, PhoenixF1JsonApi.Season, foreign_key: :year
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, I had to asscoiate the foreign_keys for the circuit and season tables to those table&amp;rsquo;s primary key.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;timestamps()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally I had to remove the &lt;strong&gt;timestamps()&lt;/strong&gt; line because the data doesn&amp;rsquo;t have updated_at/created_at.&lt;/p&gt;
+
+&lt;h4 id=&#34;conclusion:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Conclusion&lt;/h4&gt;
+
+&lt;p&gt;While it&amp;rsquo;s not difficult to use non standard keys in Phoenix, It&amp;rsquo;s really not preferred. If you have the ability to reformat the data, I highly recommend it. If not, there are ways to deal with this problem.&lt;/p&gt;
+
+&lt;p&gt;The main takaway for me is that the phoenix framework guides are very good. I followed the instructions here:
+&lt;a href=&#34;http://www.phoenixframework.org/docs/ecto-custom-primary-keys&#34;&gt;Ecto Custom Primary Keys&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;open-source:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Open Source&lt;/h4&gt;
+
+&lt;p&gt;See my project on &lt;a href=&#34;https://github.com/bennycwong/phoenix_f1_json_api&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Using Multiple DBs in Phoenix</title>
