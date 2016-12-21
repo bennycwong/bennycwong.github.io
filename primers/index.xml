@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Primers on Blog</title>
-    <link>https://bennycwong.github.io/primers/</link>
-    <description>Recent content in Primers on Blog</description>
+    <title>Primers-rsses on Blog</title>
+    <link>https://bennycwong.github.io/primers/index.xml</link>
+    <description>Recent content in Primers-rsses on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 Jul 2016 00:14:05 -0700</lastBuildDate>
@@ -21,27 +21,27 @@
 
 &lt;hr /&gt;
 
-&lt;h5 id=&#34;learn-faster-with-the-feyman-technique-by-scott-young:13a15424aa1843216936f1cd3fd26472&#34;&gt;Learn faster with the Feyman Technique by Scott Young&lt;/h5&gt;
+&lt;h5 id=&#34;learn-faster-with-the-feyman-technique-by-scott-young&#34;&gt;Learn faster with the Feyman Technique by Scott Young&lt;/h5&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=FrNqSLPaZLc&#34;&gt;&lt;img src=&#34;http://img.youtube.com/vi/FrNqSLPaZLc/0.jpg&#34; alt=&#34;Learn Faster with the Feynman Technique &#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;step-1:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 1&lt;/h5&gt;
+&lt;h5 id=&#34;step-1&#34;&gt;Step 1&lt;/h5&gt;
 
 &lt;p&gt;Write the name of the concept at the top of a blank piece of paper.&lt;/p&gt;
 
-&lt;h5 id=&#34;step-2:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 2:&lt;/h5&gt;
+&lt;h5 id=&#34;step-2&#34;&gt;Step 2:&lt;/h5&gt;
 
 &lt;p&gt;Write down an explanation of the concept on the page. Use plain English. Pretend you are teaching it to someone else (e.g a new student). This should highlight what you understand, but more importantly pinpoint what you don&amp;rsquo;t quite know.&lt;/p&gt;
 
-&lt;h5 id=&#34;step-3:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 3&lt;/h5&gt;
+&lt;h5 id=&#34;step-3&#34;&gt;Step 3&lt;/h5&gt;
 
 &lt;p&gt;Review what you have pinpointed you don&amp;rsquo;t know. Go back to the source material, re-read, and re-learn it. Repeat Step 2.&lt;/p&gt;
 
-&lt;h5 id=&#34;step-4:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 4&lt;/h5&gt;
+&lt;h5 id=&#34;step-4&#34;&gt;Step 4&lt;/h5&gt;
 
 &lt;p&gt;If you are using overly wordy or confusing language (or simply paraphrasing the source material) try again so you filter the content. Simplify your language, and where possible use simple analogy.&lt;/p&gt;
 
-&lt;h5 id=&#34;conclusion:13a15424aa1843216936f1cd3fd26472&#34;&gt;Conclusion&lt;/h5&gt;
+&lt;h5 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h5&gt;
 
 &lt;p&gt;That&amp;rsquo;s it. A simple and powerful technique to ensure you can rapidly learn and retain new concepts and information.&lt;/p&gt;
 </description>
@@ -57,7 +57,7 @@
 
 &lt;p&gt;&lt;center&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;the-best-way-to-learn-is-to-teach-it-to-someone-else:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&amp;ldquo;The best way to learn is to teach it to someone else.&amp;rdquo;&lt;/h2&gt;
+&lt;h2 id=&#34;the-best-way-to-learn-is-to-teach-it-to-someone-else&#34;&gt;&amp;ldquo;The best way to learn is to teach it to someone else.&amp;rdquo;&lt;/h2&gt;
 
 &lt;p&gt;&lt;/center&gt;&lt;/p&gt;
 
@@ -69,45 +69,45 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;programming-software:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Programming/Software&lt;/h3&gt;
+&lt;h3 id=&#34;programming-software&#34;&gt;Programming/Software&lt;/h3&gt;
 
-&lt;h5 id=&#34;serializers-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Serializers (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;serializers-coming-soon&#34;&gt;Serializers (Coming Soon)&lt;/h5&gt;
 
-&lt;h3 id=&#34;technology:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Technology&lt;/h3&gt;
+&lt;h3 id=&#34;technology&#34;&gt;Technology&lt;/h3&gt;
 
-&lt;h5 id=&#34;3d-printing-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;3D Printing (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;3d-printing-coming-soon&#34;&gt;3D Printing (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;public-key-cryptography-public-key-private-key-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Public-key cryptography (Public Key/Private Key) (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;public-key-cryptography-public-key-private-key-coming-soon&#34;&gt;Public-key cryptography (Public Key/Private Key) (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;vpn-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;VPN (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;vpn-coming-soon&#34;&gt;VPN (Coming Soon)&lt;/h5&gt;
 
-&lt;h3 id=&#34;workflow:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Workflow&lt;/h3&gt;
+&lt;h3 id=&#34;workflow&#34;&gt;Workflow&lt;/h3&gt;
 
-&lt;h3 id=&#34;learning:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Learning&lt;/h3&gt;
+&lt;h3 id=&#34;learning&#34;&gt;Learning&lt;/h3&gt;
 
-&lt;h5 id=&#34;the-feyman-technique-for-rapid-learning-primers-feynman-technique:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;../primers/feynman-technique&#34;&gt;The Feyman Technique for Rapid Learning&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;the-feyman-technique-for-rapid-learning-primers-feynman-technique&#34;&gt;&lt;a href=&#34;../primers/feynman-technique&#34;&gt;The Feyman Technique for Rapid Learning&lt;/a&gt;&lt;/h5&gt;
 
-&lt;h5 id=&#34;holistic-learning-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Holistic Learning (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;holistic-learning-coming-soon&#34;&gt;Holistic Learning (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;the-adept-method-by-kalid-azad-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;The ADEPT Method by Kalid Azad (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;the-adept-method-by-kalid-azad-coming-soon&#34;&gt;The ADEPT Method by Kalid Azad (Coming Soon)&lt;/h5&gt;
 
-&lt;h3 id=&#34;photography:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Photography&lt;/h3&gt;
+&lt;h3 id=&#34;photography&#34;&gt;Photography&lt;/h3&gt;
 
-&lt;h5 id=&#34;exposure-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Exposure (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;exposure-coming-soon&#34;&gt;Exposure (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;composition-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Composition (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;composition-coming-soon&#34;&gt;Composition (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;lighting-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Lighting (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;lighting-coming-soon&#34;&gt;Lighting (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;artificial-lights-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Artificial Lights (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;artificial-lights-coming-soon&#34;&gt;Artificial Lights (Coming Soon)&lt;/h5&gt;
 
-&lt;h3 id=&#34;misc:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Misc&lt;/h3&gt;
+&lt;h3 id=&#34;misc&#34;&gt;Misc&lt;/h3&gt;
 
-&lt;h5 id=&#34;coffee-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Coffee (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;coffee-coming-soon&#34;&gt;Coffee (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;audio-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Audio (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;audio-coming-soon&#34;&gt;Audio (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;mens-style-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Mens Style (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;mens-style-coming-soon&#34;&gt;Mens Style (Coming Soon)&lt;/h5&gt;
 </description>
     </item>
     

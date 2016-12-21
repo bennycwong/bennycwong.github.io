@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Phoenix on Blog</title>
-    <link>https://bennycwong.github.io/tags/phoenix/</link>
-    <description>Recent content in Phoenix on Blog</description>
+    <title>Blog</title>
+    <link>https://bennycwong.github.io/tags/phoenix/index.xml</link>
+    <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Aug 2016 12:27:17 -0700</lastBuildDate>
     <atom:link href="https://bennycwong.github.io/tags/phoenix/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -21,7 +20,7 @@
 
 &lt;p&gt;They also kindly provide a &lt;a href=&#34;http://ergast.com/mrd/db/&#34;&gt;mysql database image&lt;/a&gt; for download. This database is the source of this toy project I&amp;rsquo;ve been working on: the idea of which is provide a &lt;a href=&#34;http://jsonapi.org/&#34;&gt;{json:api}&lt;/a&gt; compliant API as a way for me to practice working with Elixir and Phoenix.&lt;/p&gt;
 
-&lt;h4 id=&#34;challenges:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Challenges&lt;/h4&gt;
+&lt;h4 id=&#34;challenges&#34;&gt;Challenges&lt;/h4&gt;
 
 &lt;p&gt;Unfortunately, the mysql database image uses a non standard primary key for each table.&lt;/p&gt;
 
@@ -90,7 +89,7 @@
 
 &lt;p&gt;Notice that the primary key for this table is &lt;strong&gt;raceId&lt;/strong&gt;, and the association to the seasons table is &lt;strong&gt;year&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;setting-custom-primary-keys:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Setting Custom Primary Keys&lt;/h4&gt;
+&lt;h4 id=&#34;setting-custom-primary-keys&#34;&gt;Setting Custom Primary Keys&lt;/h4&gt;
 
 &lt;p&gt;Using the model generator in Phoenix, you&amp;rsquo;ll end up with something like this:&lt;/p&gt;
 
@@ -129,7 +128,7 @@ schema &amp;quot;races&amp;quot; do
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;let-s-break-down-each-step:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Let&amp;rsquo;s break down each step.&lt;/h4&gt;
+&lt;h4 id=&#34;let-s-break-down-each-step&#34;&gt;Let&amp;rsquo;s break down each step.&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;@primary_key {:raceId, :integer, []}
 &lt;/code&gt;&lt;/pre&gt;
@@ -152,14 +151,14 @@ belongs_to :season, PhoenixF1JsonApi.Season, foreign_key: :year
 
 &lt;p&gt;Finally I had to remove the &lt;strong&gt;timestamps()&lt;/strong&gt; line because the data doesn&amp;rsquo;t have updated_at/created_at.&lt;/p&gt;
 
-&lt;h4 id=&#34;conclusion:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Conclusion&lt;/h4&gt;
+&lt;h4 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h4&gt;
 
 &lt;p&gt;While it&amp;rsquo;s not difficult to use non standard keys in Phoenix, It&amp;rsquo;s really not preferred. If you have the ability to reformat the data, I highly recommend it. If not, there are ways to deal with this problem.&lt;/p&gt;
 
 &lt;p&gt;The main takaway for me is that the phoenix framework guides are very good. I followed the instructions here:
 &lt;a href=&#34;http://www.phoenixframework.org/docs/ecto-custom-primary-keys&#34;&gt;Ecto Custom Primary Keys&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;open-source:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Open Source&lt;/h4&gt;
+&lt;h4 id=&#34;open-source&#34;&gt;Open Source&lt;/h4&gt;
 
 &lt;p&gt;See my project on &lt;a href=&#34;https://github.com/bennycwong/phoenix_f1_json_api&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -184,7 +183,7 @@ belongs_to :season, PhoenixF1JsonApi.Season, foreign_key: :year
 &lt;p&gt;Here&amp;rsquo;s are the steps.&lt;br /&gt;
 In this example, I&amp;rsquo;m going to define &lt;strong&gt;Repo&lt;/strong&gt; as my main database, and a &lt;strong&gt;RepoPostgres&lt;/strong&gt;, a postgres DB that I&amp;rsquo;m using the handle concerns that are unrelated to to main database&lt;/p&gt;
 
-&lt;h4 id=&#34;1-define-the-second-database-in-your-config-file:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;1. Define the second database in your config file:&lt;/h4&gt;
+&lt;h4 id=&#34;1-define-the-second-database-in-your-config-file&#34;&gt;1. Define the second database in your config file:&lt;/h4&gt;
 
 &lt;p&gt;//project/config/{env}.exs&lt;/p&gt;
 
@@ -207,7 +206,7 @@ config :demo, Demo.RepoPostgres,
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;2-create-a-new-repo-file-in-lib:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;2. Create a new repo file in lib&lt;/h4&gt;
+&lt;h4 id=&#34;2-create-a-new-repo-file-in-lib&#34;&gt;2. Create a new repo file in lib&lt;/h4&gt;
 
 &lt;p&gt;//project/lib/demo/repo_postgres.ex&lt;/p&gt;
 
@@ -216,7 +215,7 @@ config :demo, Demo.RepoPostgres,
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;3-add-the-new-database-repo-in-supervision-tree-on-app-start:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;3. Add the new database repo in supervision tree on app start&lt;/h4&gt;
+&lt;h4 id=&#34;3-add-the-new-database-repo-in-supervision-tree-on-app-start&#34;&gt;3. Add the new database repo in supervision tree on app start&lt;/h4&gt;
 
 &lt;p&gt;//project/lib/demo.ex&lt;/p&gt;
 
@@ -232,7 +231,7 @@ end
     ]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;4-use-it:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;4. Use it!&lt;/h4&gt;
+&lt;h4 id=&#34;4-use-it&#34;&gt;4. Use it!&lt;/h4&gt;
 
 &lt;p&gt;In any place where you want to use the second database, simply use that module.&lt;/p&gt;
 
@@ -250,7 +249,7 @@ end
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;conclusion:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;Conclusion&lt;/h4&gt;
+&lt;h4 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h4&gt;
 
 &lt;p&gt;I think this is one of the a-ha moments in my journey using elixir.&lt;/p&gt;
 

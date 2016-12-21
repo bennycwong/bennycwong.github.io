@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on Blog</title>
-    <link>https://bennycwong.github.io/tags/git/</link>
-    <description>Recent content in Git on Blog</description>
+    <title>Blog</title>
+    <link>https://bennycwong.github.io/tags/git/index.xml</link>
+    <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Aug 2016 19:19:37 -0700</lastBuildDate>
     <atom:link href="https://bennycwong.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -21,16 +20,16 @@
 I remember having a hard time wrapping my head around it for a while.
 This is my attempt at explaining what &lt;u&gt;&lt;strong&gt;rebase&lt;/strong&gt;&lt;/u&gt; is, as I would&amp;rsquo;ve liked to have been taught.*&lt;/p&gt;
 
-&lt;h2 id=&#34;a-star-wars-illustration-analogy:702faf315c6b59cc55b18aa5ea562949&#34;&gt;A. Star Wars illustration (Analogy)&lt;/h2&gt;
+&lt;h2 id=&#34;a-star-wars-illustration-analogy&#34;&gt;A. Star Wars illustration (Analogy)&lt;/h2&gt;
 
 &lt;p&gt;You are playing the (fictional) latest open-world alternate universe Star Wars game.
 In this game, there are dozens of worlds to explore, and in each level, you can gather all sorts of loot. You can &lt;u&gt;&lt;strong&gt;save&lt;/strong&gt;&lt;/u&gt; game at any time.&lt;/p&gt;
 
-&lt;h5 id=&#34;the-save-feature-is-git-it-s-a-way-to-store-the-history-of-your-game-and-how-you-go-to-where-you-are-in-git-we-call-these-saves-u-commits-u:702faf315c6b59cc55b18aa5ea562949&#34;&gt;The save feature is git. It&amp;rsquo;s a way to store the history of your game and how you go to where you are. In git, we call these saves &lt;u&gt;commits&lt;/u&gt;.&lt;/h5&gt;
+&lt;h5 id=&#34;the-save-feature-is-git-it-s-a-way-to-store-the-history-of-your-game-and-how-you-go-to-where-you-are-in-git-we-call-these-saves-u-commits-u&#34;&gt;The save feature is git. It&amp;rsquo;s a way to store the history of your game and how you go to where you are. In git, we call these saves &lt;u&gt;commits&lt;/u&gt;.&lt;/h5&gt;
 
 &lt;p&gt;What makes this game open-world is that you can choose which which world (level) to go to in whatever order you want. You can go from Naboo, then to Endor, and then back to Hoth.&lt;/p&gt;
 
-&lt;h5 id=&#34;being-in-the-open-world-is-like-having-branches-from-one-of-your-saves-you-can-branch-out-and-beat-levels-however-you-want-based-on-a-certain-previous-save:702faf315c6b59cc55b18aa5ea562949&#34;&gt;Being in the open world is like having branches. From one of your saves, you can branch out and beat levels however you want based on a certain previous save.&lt;/h5&gt;
+&lt;h5 id=&#34;being-in-the-open-world-is-like-having-branches-from-one-of-your-saves-you-can-branch-out-and-beat-levels-however-you-want-based-on-a-certain-previous-save&#34;&gt;Being in the open world is like having branches. From one of your saves, you can branch out and beat levels however you want based on a certain previous save.&lt;/h5&gt;
 
 &lt;p&gt;For example, for the first part of the game, our saves look like this:&lt;/p&gt;
 
@@ -66,7 +65,7 @@ This is &lt;u&gt;&lt;strong&gt;save #4&lt;/strong&gt;&lt;/u&gt;.&lt;/p&gt;
 
 &lt;p&gt;There are two strategies to combine the play-throughs: &lt;u&gt;&lt;strong&gt;merge&lt;/strong&gt;&lt;/u&gt; and &lt;u&gt;&lt;strong&gt;rebase&lt;/strong&gt;&lt;/u&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;1-merge:702faf315c6b59cc55b18aa5ea562949&#34;&gt;1. Merge&lt;/h4&gt;
+&lt;h4 id=&#34;1-merge&#34;&gt;1. Merge&lt;/h4&gt;
 
 &lt;p&gt;Using this strategy, you would be in &lt;u&gt;&lt;strong&gt;save #4 in the feature branch&lt;/strong&gt;&lt;/u&gt; and merging in &lt;u&gt;&lt;strong&gt;save #5 in the master branch&lt;/strong&gt;&lt;/u&gt;. Practically, it&amp;rsquo;s as if you were in the middle of your fight in the Death Star, and then teleported to Level 5 (Tatooine) and Level 6 (Yevin 4), got your force skills and the X-wing, and teleported back into the heat of battle with the Death Star in your new X-wing.&lt;/p&gt;
 
@@ -90,7 +89,7 @@ This is &lt;u&gt;&lt;strong&gt;save #4&lt;/strong&gt;&lt;/u&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;2-rebase:702faf315c6b59cc55b18aa5ea562949&#34;&gt;2. Rebase&lt;/h4&gt;
+&lt;h4 id=&#34;2-rebase&#34;&gt;2. Rebase&lt;/h4&gt;
 
 &lt;p&gt;Rebasing, unlike merging, is rewinding to a common point in history, and then applying the history of the target branch, and then applying the history of the current branch.&lt;/p&gt;
 
@@ -109,11 +108,11 @@ This is &lt;u&gt;&lt;strong&gt;save #4&lt;/strong&gt;&lt;/u&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git rebase {repo} branch-b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;b-rebase-vs-merge-visualized-diagram:702faf315c6b59cc55b18aa5ea562949&#34;&gt;B. Rebase vs Merge Visualized (Diagram)&lt;/h2&gt;
+&lt;h2 id=&#34;b-rebase-vs-merge-visualized-diagram&#34;&gt;B. Rebase vs Merge Visualized (Diagram)&lt;/h2&gt;
 
 &lt;p&gt;Here&amp;rsquo;s a visual representation of what the game saves.&lt;/p&gt;
 
-&lt;h5 id=&#34;branches-play-throughs:702faf315c6b59cc55b18aa5ea562949&#34;&gt;Branches (Play-throughs)&lt;/h5&gt;
+&lt;h5 id=&#34;branches-play-throughs&#34;&gt;Branches (Play-throughs)&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.atlassian.com/git/images/tutorials/advanced/merging-vs-rebasing/01.svg&#34; alt=&#34;branch&#34; /&gt;
 Legend:&lt;br /&gt;
@@ -121,15 +120,15 @@ White &amp;ndash; Your history up till  &lt;u&gt;&lt;strong&gt;save #3&lt;/stron
 Green &amp;ndash; Your progress in level 10 (The Death Star) &lt;u&gt;&lt;strong&gt;save #4&lt;/strong&gt;&lt;/u&gt;.&lt;br /&gt;
 Blue &amp;ndash; Your saved game after beating level 6 (Tatooine) and 7 (Yavin)  &lt;u&gt;&lt;strong&gt;save #5&lt;/strong&gt;&lt;/u&gt;.&lt;/p&gt;
 
-&lt;h5 id=&#34;merge-strategy:702faf315c6b59cc55b18aa5ea562949&#34;&gt;Merge Strategy&lt;/h5&gt;
+&lt;h5 id=&#34;merge-strategy&#34;&gt;Merge Strategy&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.atlassian.com/git/images/tutorials/advanced/merging-vs-rebasing/02.svg&#34; alt=&#34;merge&#34; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;rebase-strategy:702faf315c6b59cc55b18aa5ea562949&#34;&gt;Rebase Strategy&lt;/h5&gt;
+&lt;h5 id=&#34;rebase-strategy&#34;&gt;Rebase Strategy&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.atlassian.com/git/images/tutorials/advanced/merging-vs-rebasing/03.svg&#34; alt=&#34;rebase&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;c-repo-to-practice-example:702faf315c6b59cc55b18aa5ea562949&#34;&gt;C. Repo To Practice (Example)&lt;/h2&gt;
+&lt;h2 id=&#34;c-repo-to-practice-example&#34;&gt;C. Repo To Practice (Example)&lt;/h2&gt;
 
 &lt;p&gt;For practice, I&amp;rsquo;ve created a demo repo for you to play with.&lt;br /&gt;
 Check it out here: &lt;a href=&#34;https://github.com/bennycwong/git-rebase-practice&#34;&gt;git-rebase-practice&lt;/a&gt; on github.&lt;/p&gt;
@@ -197,17 +196,17 @@ $ rm -rf git-rebase-practice
 $ git clone git@github.com:bennycwong/git-rebase-practice.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;d-so-why-is-it-called-rebasing-plain-english:702faf315c6b59cc55b18aa5ea562949&#34;&gt;D. So why is it called rebasing? (Plain English)&lt;/h2&gt;
+&lt;h2 id=&#34;d-so-why-is-it-called-rebasing-plain-english&#34;&gt;D. So why is it called rebasing? (Plain English)&lt;/h2&gt;
 
 &lt;p&gt;Here is a helpful heuristic to remember rebasing means. Think of this as literally re-&lt;strong&gt;base&lt;/strong&gt;-ing something. You are changing what your current branch is &lt;strong&gt;based&lt;/strong&gt; on.&lt;/p&gt;
 
 &lt;p&gt;Another way to put it, rebase is going back in time and changing history according to another timeline before apply my changes in this current timeline.&lt;/p&gt;
 
-&lt;h2 id=&#34;e-learn-more-technical-definition:702faf315c6b59cc55b18aa5ea562949&#34;&gt;E. Learn More (Technical Definition)&lt;/h2&gt;
+&lt;h2 id=&#34;e-learn-more-technical-definition&#34;&gt;E. Learn More (Technical Definition)&lt;/h2&gt;
 
 &lt;p&gt;If you want to learn more about this topic, Atlassian has a great git tutorial series &lt;a href=&#34;https://www.atlassian.com/git/tutorials/merging-vs-rebasing/summary&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;appendix-a-the-adept-method:702faf315c6b59cc55b18aa5ea562949&#34;&gt;*Appendix A: The ADEPT Method&lt;/h2&gt;
+&lt;h2 id=&#34;appendix-a-the-adept-method&#34;&gt;*Appendix A: The ADEPT Method&lt;/h2&gt;
 
 &lt;p&gt;I&amp;rsquo;m currently learning how to apply the &lt;a href=&#34;https://betterexplained.com/articles/adept-method/&#34;&gt;ADEPT Method&lt;/a&gt; of teaching.&lt;/p&gt;
 
@@ -215,7 +214,7 @@ $ git clone git@github.com:bennycwong/git-rebase-practice.git
   &lt;img src=&#34;https://betterexplained.com/wp-content/uploads/adept/adept-method.png&#34; alt=&#34;ADEPT&#34; /&gt;
 &lt;/center&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;appendix-b-so-what-about-conflicts:702faf315c6b59cc55b18aa5ea562949&#34;&gt;Appendix B: So what about conflicts?&lt;/h2&gt;
+&lt;h2 id=&#34;appendix-b-so-what-about-conflicts&#34;&gt;Appendix B: So what about conflicts?&lt;/h2&gt;
 
 &lt;p&gt;Conflicts happen whether you merge or rebase. Look for a post in the future that discuss this topic further&amp;hellip;&lt;/p&gt;
 </description>
