@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Open Source on Blog</title>
-    <link>https://bennycwong.github.io/tags/open-source/</link>
-    <description>Recent content in Open Source on Blog</description>
+    <title>Blog</title>
+    <link>https://bennycwong.github.io/tags/open-source/index.xml</link>
+    <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Aug 2016 11:20:18 -0700</lastBuildDate>
     <atom:link href="https://bennycwong.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -21,7 +20,7 @@
 
 &lt;p&gt;Instead, I want to share my journey learning elixir. The first stage of my programming language learning is writing a lot of code, with little to no self consciousness about writing &amp;ldquo;bad code&amp;rdquo;. This is in no way the best way to write elixir (probably), but it&amp;rsquo;s the first step to take me from &lt;strong&gt;knowing about&lt;/strong&gt; something to &lt;strong&gt;knowing something&lt;/strong&gt;. I plan to revisit these in the future as I learn more through programming more in elixir.&lt;/p&gt;
 
-&lt;h4 id=&#34;the-riddler:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;The Riddler&lt;/h4&gt;
+&lt;h4 id=&#34;the-riddler&#34;&gt;The Riddler&lt;/h4&gt;
 
 &lt;p&gt;The Riddler is a series of puzzles written by the folks at &lt;a href=&#34;https://fivethirtyeight.com/tag/the-riddler/&#34;&gt;Five Thirty Eight&lt;/a&gt;. Every week or so, they publish a new riddle, as well as post answers to the previous week&amp;rsquo;s puzzles.&lt;/p&gt;
 
@@ -39,7 +38,7 @@
 
 &lt;p&gt;Below are two simulations I wrote in Elixir to solve the puzzles on &lt;a href=&#34;https://fivethirtyeight.com/tag/the-riddler/&#34;&gt;The Riddler at fivethirtyeight&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;writing-simulations:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;Writing Simulations&lt;/h4&gt;
+&lt;h4 id=&#34;writing-simulations&#34;&gt;Writing Simulations&lt;/h4&gt;
 
 &lt;p&gt;I often hear this advice: you learn more when you build your own projects, instead of just following along with tutorials. This gives us two advantage: you care more about building it, thus sustaining your &lt;strong&gt;motivation&lt;/strong&gt;, and it requires you to do more than just follow steps. &lt;strong&gt;It makes you think.&lt;/strong&gt;&lt;/p&gt;
 
@@ -55,9 +54,9 @@
 
 &lt;p&gt;My goal here is not to write the best code, develop a product, or anything of the sort. I&amp;rsquo;m trying to apply the concepts learned from the getting started guides and use them enough so that when I read about these topics, I have an intuitive understanding and context to lean on.&lt;/p&gt;
 
-&lt;h3 id=&#34;the-riddles:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;The Riddles&lt;/h3&gt;
+&lt;h3 id=&#34;the-riddles&#34;&gt;The Riddles&lt;/h3&gt;
 
-&lt;h4 id=&#34;elevator-button-problem:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;Elevator Button Problem&lt;/h4&gt;
+&lt;h4 id=&#34;elevator-button-problem&#34;&gt;Elevator Button Problem&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://fivethirtyeight.com/features/can-you-solve-this-elevator-button-puzzle/&#34;&gt;Click here to see the Elevator Button riddle on Riddler&lt;/a&gt;&lt;/p&gt;
 
@@ -72,7 +71,7 @@
 
 &lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/4430436/17579892/af24cf12-5f4e-11e6-9f19-be9357d70f2c.gif&#34; alt=&#34;Elevantor&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;the-grizzly-bear-problem:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;The Grizzly Bear Problem&lt;/h4&gt;
+&lt;h4 id=&#34;the-grizzly-bear-problem&#34;&gt;The Grizzly Bear Problem&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://fivethirtyeight.com/features/should-the-grizzly-bear-eat-the-salmon/&#34;&gt;Click here to see the Grizzly Problem on Riddler&lt;/a&gt;&lt;/p&gt;
 

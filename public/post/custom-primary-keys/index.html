@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Benny C. Wong">
 		<meta name="description" content="">
-		<meta name="generator" content="Hugo 0.15" />
+		<meta name="generator" content="Hugo 0.17" />
 		<title>Dealing with Legacy Databases &middot; Blog</title>
 		<link rel="shortcut icon" href="https://bennycwong.github.io/images/favicon.ico">
 		<link rel="stylesheet" href="https://bennycwong.github.io/css/style.css">
@@ -54,7 +54,7 @@
 
 <p>They also kindly provide a <a href="http://ergast.com/mrd/db/">mysql database image</a> for download. This database is the source of this toy project I&rsquo;ve been working on: the idea of which is provide a <a href="http://jsonapi.org/">{json:api}</a> compliant API as a way for me to practice working with Elixir and Phoenix.</p>
 
-<h4 id="challenges:deb8358274790b4550136b5a3dbedc8c">Challenges</h4>
+<h4 id="challenges">Challenges</h4>
 
 <p>Unfortunately, the mysql database image uses a non standard primary key for each table.</p>
 
@@ -123,7 +123,7 @@
 
 <p>Notice that the primary key for this table is <strong>raceId</strong>, and the association to the seasons table is <strong>year</strong>.</p>
 
-<h4 id="setting-custom-primary-keys:deb8358274790b4550136b5a3dbedc8c">Setting Custom Primary Keys</h4>
+<h4 id="setting-custom-primary-keys">Setting Custom Primary Keys</h4>
 
 <p>Using the model generator in Phoenix, you&rsquo;ll end up with something like this:</p>
 
@@ -162,7 +162,7 @@ schema &quot;races&quot; do
 end
 </code></pre>
 
-<h4 id="let-s-break-down-each-step:deb8358274790b4550136b5a3dbedc8c">Let&rsquo;s break down each step.</h4>
+<h4 id="let-s-break-down-each-step">Let&rsquo;s break down each step.</h4>
 
 <pre><code>@primary_key {:raceId, :integer, []}
 </code></pre>
@@ -185,14 +185,14 @@ belongs_to :season, PhoenixF1JsonApi.Season, foreign_key: :year
 
 <p>Finally I had to remove the <strong>timestamps()</strong> line because the data doesn&rsquo;t have updated_at/created_at.</p>
 
-<h4 id="conclusion:deb8358274790b4550136b5a3dbedc8c">Conclusion</h4>
+<h4 id="conclusion">Conclusion</h4>
 
 <p>While it&rsquo;s not difficult to use non standard keys in Phoenix, It&rsquo;s really not preferred. If you have the ability to reformat the data, I highly recommend it. If not, there are ways to deal with this problem.</p>
 
 <p>The main takaway for me is that the phoenix framework guides are very good. I followed the instructions here:
 <a href="http://www.phoenixframework.org/docs/ecto-custom-primary-keys">Ecto Custom Primary Keys</a></p>
 
-<h4 id="open-source:deb8358274790b4550136b5a3dbedc8c">Open Source</h4>
+<h4 id="open-source">Open Source</h4>
 
 <p>See my project on <a href="https://github.com/bennycwong/phoenix_f1_json_api">Github</a>.</p>
 

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog</title>
-    <link>https://bennycwong.github.io/</link>
+    <link>https://bennycwong.github.io/index.xml</link>
     <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -21,7 +21,7 @@
 
 &lt;p&gt;They also kindly provide a &lt;a href=&#34;http://ergast.com/mrd/db/&#34;&gt;mysql database image&lt;/a&gt; for download. This database is the source of this toy project I&amp;rsquo;ve been working on: the idea of which is provide a &lt;a href=&#34;http://jsonapi.org/&#34;&gt;{json:api}&lt;/a&gt; compliant API as a way for me to practice working with Elixir and Phoenix.&lt;/p&gt;
 
-&lt;h4 id=&#34;challenges:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Challenges&lt;/h4&gt;
+&lt;h4 id=&#34;challenges&#34;&gt;Challenges&lt;/h4&gt;
 
 &lt;p&gt;Unfortunately, the mysql database image uses a non standard primary key for each table.&lt;/p&gt;
 
@@ -90,7 +90,7 @@
 
 &lt;p&gt;Notice that the primary key for this table is &lt;strong&gt;raceId&lt;/strong&gt;, and the association to the seasons table is &lt;strong&gt;year&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;setting-custom-primary-keys:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Setting Custom Primary Keys&lt;/h4&gt;
+&lt;h4 id=&#34;setting-custom-primary-keys&#34;&gt;Setting Custom Primary Keys&lt;/h4&gt;
 
 &lt;p&gt;Using the model generator in Phoenix, you&amp;rsquo;ll end up with something like this:&lt;/p&gt;
 
@@ -129,7 +129,7 @@ schema &amp;quot;races&amp;quot; do
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;let-s-break-down-each-step:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Let&amp;rsquo;s break down each step.&lt;/h4&gt;
+&lt;h4 id=&#34;let-s-break-down-each-step&#34;&gt;Let&amp;rsquo;s break down each step.&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;@primary_key {:raceId, :integer, []}
 &lt;/code&gt;&lt;/pre&gt;
@@ -152,14 +152,14 @@ belongs_to :season, PhoenixF1JsonApi.Season, foreign_key: :year
 
 &lt;p&gt;Finally I had to remove the &lt;strong&gt;timestamps()&lt;/strong&gt; line because the data doesn&amp;rsquo;t have updated_at/created_at.&lt;/p&gt;
 
-&lt;h4 id=&#34;conclusion:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Conclusion&lt;/h4&gt;
+&lt;h4 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h4&gt;
 
 &lt;p&gt;While it&amp;rsquo;s not difficult to use non standard keys in Phoenix, It&amp;rsquo;s really not preferred. If you have the ability to reformat the data, I highly recommend it. If not, there are ways to deal with this problem.&lt;/p&gt;
 
 &lt;p&gt;The main takaway for me is that the phoenix framework guides are very good. I followed the instructions here:
 &lt;a href=&#34;http://www.phoenixframework.org/docs/ecto-custom-primary-keys&#34;&gt;Ecto Custom Primary Keys&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;open-source:deb8358274790b4550136b5a3dbedc8c&#34;&gt;Open Source&lt;/h4&gt;
+&lt;h4 id=&#34;open-source&#34;&gt;Open Source&lt;/h4&gt;
 
 &lt;p&gt;See my project on &lt;a href=&#34;https://github.com/bennycwong/phoenix_f1_json_api&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -184,7 +184,7 @@ belongs_to :season, PhoenixF1JsonApi.Season, foreign_key: :year
 &lt;p&gt;Here&amp;rsquo;s are the steps.&lt;br /&gt;
 In this example, I&amp;rsquo;m going to define &lt;strong&gt;Repo&lt;/strong&gt; as my main database, and a &lt;strong&gt;RepoPostgres&lt;/strong&gt;, a postgres DB that I&amp;rsquo;m using the handle concerns that are unrelated to to main database&lt;/p&gt;
 
-&lt;h4 id=&#34;1-define-the-second-database-in-your-config-file:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;1. Define the second database in your config file:&lt;/h4&gt;
+&lt;h4 id=&#34;1-define-the-second-database-in-your-config-file&#34;&gt;1. Define the second database in your config file:&lt;/h4&gt;
 
 &lt;p&gt;//project/config/{env}.exs&lt;/p&gt;
 
@@ -207,7 +207,7 @@ config :demo, Demo.RepoPostgres,
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;2-create-a-new-repo-file-in-lib:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;2. Create a new repo file in lib&lt;/h4&gt;
+&lt;h4 id=&#34;2-create-a-new-repo-file-in-lib&#34;&gt;2. Create a new repo file in lib&lt;/h4&gt;
 
 &lt;p&gt;//project/lib/demo/repo_postgres.ex&lt;/p&gt;
 
@@ -216,7 +216,7 @@ config :demo, Demo.RepoPostgres,
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;3-add-the-new-database-repo-in-supervision-tree-on-app-start:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;3. Add the new database repo in supervision tree on app start&lt;/h4&gt;
+&lt;h4 id=&#34;3-add-the-new-database-repo-in-supervision-tree-on-app-start&#34;&gt;3. Add the new database repo in supervision tree on app start&lt;/h4&gt;
 
 &lt;p&gt;//project/lib/demo.ex&lt;/p&gt;
 
@@ -232,7 +232,7 @@ end
     ]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;4-use-it:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;4. Use it!&lt;/h4&gt;
+&lt;h4 id=&#34;4-use-it&#34;&gt;4. Use it!&lt;/h4&gt;
 
 &lt;p&gt;In any place where you want to use the second database, simply use that module.&lt;/p&gt;
 
@@ -250,7 +250,7 @@ end
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;conclusion:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;Conclusion&lt;/h4&gt;
+&lt;h4 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h4&gt;
 
 &lt;p&gt;I think this is one of the a-ha moments in my journey using elixir.&lt;/p&gt;
 
@@ -278,7 +278,7 @@ end
 
 &lt;p&gt;Instead, I want to share my journey learning elixir. The first stage of my programming language learning is writing a lot of code, with little to no self consciousness about writing &amp;ldquo;bad code&amp;rdquo;. This is in no way the best way to write elixir (probably), but it&amp;rsquo;s the first step to take me from &lt;strong&gt;knowing about&lt;/strong&gt; something to &lt;strong&gt;knowing something&lt;/strong&gt;. I plan to revisit these in the future as I learn more through programming more in elixir.&lt;/p&gt;
 
-&lt;h4 id=&#34;the-riddler:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;The Riddler&lt;/h4&gt;
+&lt;h4 id=&#34;the-riddler&#34;&gt;The Riddler&lt;/h4&gt;
 
 &lt;p&gt;The Riddler is a series of puzzles written by the folks at &lt;a href=&#34;https://fivethirtyeight.com/tag/the-riddler/&#34;&gt;Five Thirty Eight&lt;/a&gt;. Every week or so, they publish a new riddle, as well as post answers to the previous week&amp;rsquo;s puzzles.&lt;/p&gt;
 
@@ -296,7 +296,7 @@ end
 
 &lt;p&gt;Below are two simulations I wrote in Elixir to solve the puzzles on &lt;a href=&#34;https://fivethirtyeight.com/tag/the-riddler/&#34;&gt;The Riddler at fivethirtyeight&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;writing-simulations:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;Writing Simulations&lt;/h4&gt;
+&lt;h4 id=&#34;writing-simulations&#34;&gt;Writing Simulations&lt;/h4&gt;
 
 &lt;p&gt;I often hear this advice: you learn more when you build your own projects, instead of just following along with tutorials. This gives us two advantage: you care more about building it, thus sustaining your &lt;strong&gt;motivation&lt;/strong&gt;, and it requires you to do more than just follow steps. &lt;strong&gt;It makes you think.&lt;/strong&gt;&lt;/p&gt;
 
@@ -312,9 +312,9 @@ end
 
 &lt;p&gt;My goal here is not to write the best code, develop a product, or anything of the sort. I&amp;rsquo;m trying to apply the concepts learned from the getting started guides and use them enough so that when I read about these topics, I have an intuitive understanding and context to lean on.&lt;/p&gt;
 
-&lt;h3 id=&#34;the-riddles:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;The Riddles&lt;/h3&gt;
+&lt;h3 id=&#34;the-riddles&#34;&gt;The Riddles&lt;/h3&gt;
 
-&lt;h4 id=&#34;elevator-button-problem:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;Elevator Button Problem&lt;/h4&gt;
+&lt;h4 id=&#34;elevator-button-problem&#34;&gt;Elevator Button Problem&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://fivethirtyeight.com/features/can-you-solve-this-elevator-button-puzzle/&#34;&gt;Click here to see the Elevator Button riddle on Riddler&lt;/a&gt;&lt;/p&gt;
 
@@ -329,7 +329,7 @@ end
 
 &lt;p&gt;&lt;img src=&#34;https://cloud.githubusercontent.com/assets/4430436/17579892/af24cf12-5f4e-11e6-9f19-be9357d70f2c.gif&#34; alt=&#34;Elevantor&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;the-grizzly-bear-problem:f20b5269d4afb8ee8f2457a6c3dfcc79&#34;&gt;The Grizzly Bear Problem&lt;/h4&gt;
+&lt;h4 id=&#34;the-grizzly-bear-problem&#34;&gt;The Grizzly Bear Problem&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://fivethirtyeight.com/features/should-the-grizzly-bear-eat-the-salmon/&#34;&gt;Click here to see the Grizzly Problem on Riddler&lt;/a&gt;&lt;/p&gt;
 
@@ -360,16 +360,16 @@ end
 I remember having a hard time wrapping my head around it for a while.
 This is my attempt at explaining what &lt;u&gt;&lt;strong&gt;rebase&lt;/strong&gt;&lt;/u&gt; is, as I would&amp;rsquo;ve liked to have been taught.*&lt;/p&gt;
 
-&lt;h2 id=&#34;a-star-wars-illustration-analogy:702faf315c6b59cc55b18aa5ea562949&#34;&gt;A. Star Wars illustration (Analogy)&lt;/h2&gt;
+&lt;h2 id=&#34;a-star-wars-illustration-analogy&#34;&gt;A. Star Wars illustration (Analogy)&lt;/h2&gt;
 
 &lt;p&gt;You are playing the (fictional) latest open-world alternate universe Star Wars game.
 In this game, there are dozens of worlds to explore, and in each level, you can gather all sorts of loot. You can &lt;u&gt;&lt;strong&gt;save&lt;/strong&gt;&lt;/u&gt; game at any time.&lt;/p&gt;
 
-&lt;h5 id=&#34;the-save-feature-is-git-it-s-a-way-to-store-the-history-of-your-game-and-how-you-go-to-where-you-are-in-git-we-call-these-saves-u-commits-u:702faf315c6b59cc55b18aa5ea562949&#34;&gt;The save feature is git. It&amp;rsquo;s a way to store the history of your game and how you go to where you are. In git, we call these saves &lt;u&gt;commits&lt;/u&gt;.&lt;/h5&gt;
+&lt;h5 id=&#34;the-save-feature-is-git-it-s-a-way-to-store-the-history-of-your-game-and-how-you-go-to-where-you-are-in-git-we-call-these-saves-u-commits-u&#34;&gt;The save feature is git. It&amp;rsquo;s a way to store the history of your game and how you go to where you are. In git, we call these saves &lt;u&gt;commits&lt;/u&gt;.&lt;/h5&gt;
 
 &lt;p&gt;What makes this game open-world is that you can choose which which world (level) to go to in whatever order you want. You can go from Naboo, then to Endor, and then back to Hoth.&lt;/p&gt;
 
-&lt;h5 id=&#34;being-in-the-open-world-is-like-having-branches-from-one-of-your-saves-you-can-branch-out-and-beat-levels-however-you-want-based-on-a-certain-previous-save:702faf315c6b59cc55b18aa5ea562949&#34;&gt;Being in the open world is like having branches. From one of your saves, you can branch out and beat levels however you want based on a certain previous save.&lt;/h5&gt;
+&lt;h5 id=&#34;being-in-the-open-world-is-like-having-branches-from-one-of-your-saves-you-can-branch-out-and-beat-levels-however-you-want-based-on-a-certain-previous-save&#34;&gt;Being in the open world is like having branches. From one of your saves, you can branch out and beat levels however you want based on a certain previous save.&lt;/h5&gt;
 
 &lt;p&gt;For example, for the first part of the game, our saves look like this:&lt;/p&gt;
 
@@ -405,7 +405,7 @@ This is &lt;u&gt;&lt;strong&gt;save #4&lt;/strong&gt;&lt;/u&gt;.&lt;/p&gt;
 
 &lt;p&gt;There are two strategies to combine the play-throughs: &lt;u&gt;&lt;strong&gt;merge&lt;/strong&gt;&lt;/u&gt; and &lt;u&gt;&lt;strong&gt;rebase&lt;/strong&gt;&lt;/u&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;1-merge:702faf315c6b59cc55b18aa5ea562949&#34;&gt;1. Merge&lt;/h4&gt;
+&lt;h4 id=&#34;1-merge&#34;&gt;1. Merge&lt;/h4&gt;
 
 &lt;p&gt;Using this strategy, you would be in &lt;u&gt;&lt;strong&gt;save #4 in the feature branch&lt;/strong&gt;&lt;/u&gt; and merging in &lt;u&gt;&lt;strong&gt;save #5 in the master branch&lt;/strong&gt;&lt;/u&gt;. Practically, it&amp;rsquo;s as if you were in the middle of your fight in the Death Star, and then teleported to Level 5 (Tatooine) and Level 6 (Yevin 4), got your force skills and the X-wing, and teleported back into the heat of battle with the Death Star in your new X-wing.&lt;/p&gt;
 
@@ -429,7 +429,7 @@ This is &lt;u&gt;&lt;strong&gt;save #4&lt;/strong&gt;&lt;/u&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;2-rebase:702faf315c6b59cc55b18aa5ea562949&#34;&gt;2. Rebase&lt;/h4&gt;
+&lt;h4 id=&#34;2-rebase&#34;&gt;2. Rebase&lt;/h4&gt;
 
 &lt;p&gt;Rebasing, unlike merging, is rewinding to a common point in history, and then applying the history of the target branch, and then applying the history of the current branch.&lt;/p&gt;
 
@@ -448,11 +448,11 @@ This is &lt;u&gt;&lt;strong&gt;save #4&lt;/strong&gt;&lt;/u&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git rebase {repo} branch-b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;b-rebase-vs-merge-visualized-diagram:702faf315c6b59cc55b18aa5ea562949&#34;&gt;B. Rebase vs Merge Visualized (Diagram)&lt;/h2&gt;
+&lt;h2 id=&#34;b-rebase-vs-merge-visualized-diagram&#34;&gt;B. Rebase vs Merge Visualized (Diagram)&lt;/h2&gt;
 
 &lt;p&gt;Here&amp;rsquo;s a visual representation of what the game saves.&lt;/p&gt;
 
-&lt;h5 id=&#34;branches-play-throughs:702faf315c6b59cc55b18aa5ea562949&#34;&gt;Branches (Play-throughs)&lt;/h5&gt;
+&lt;h5 id=&#34;branches-play-throughs&#34;&gt;Branches (Play-throughs)&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.atlassian.com/git/images/tutorials/advanced/merging-vs-rebasing/01.svg&#34; alt=&#34;branch&#34; /&gt;
 Legend:&lt;br /&gt;
@@ -460,15 +460,15 @@ White &amp;ndash; Your history up till  &lt;u&gt;&lt;strong&gt;save #3&lt;/stron
 Green &amp;ndash; Your progress in level 10 (The Death Star) &lt;u&gt;&lt;strong&gt;save #4&lt;/strong&gt;&lt;/u&gt;.&lt;br /&gt;
 Blue &amp;ndash; Your saved game after beating level 6 (Tatooine) and 7 (Yavin)  &lt;u&gt;&lt;strong&gt;save #5&lt;/strong&gt;&lt;/u&gt;.&lt;/p&gt;
 
-&lt;h5 id=&#34;merge-strategy:702faf315c6b59cc55b18aa5ea562949&#34;&gt;Merge Strategy&lt;/h5&gt;
+&lt;h5 id=&#34;merge-strategy&#34;&gt;Merge Strategy&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.atlassian.com/git/images/tutorials/advanced/merging-vs-rebasing/02.svg&#34; alt=&#34;merge&#34; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;rebase-strategy:702faf315c6b59cc55b18aa5ea562949&#34;&gt;Rebase Strategy&lt;/h5&gt;
+&lt;h5 id=&#34;rebase-strategy&#34;&gt;Rebase Strategy&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.atlassian.com/git/images/tutorials/advanced/merging-vs-rebasing/03.svg&#34; alt=&#34;rebase&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;c-repo-to-practice-example:702faf315c6b59cc55b18aa5ea562949&#34;&gt;C. Repo To Practice (Example)&lt;/h2&gt;
+&lt;h2 id=&#34;c-repo-to-practice-example&#34;&gt;C. Repo To Practice (Example)&lt;/h2&gt;
 
 &lt;p&gt;For practice, I&amp;rsquo;ve created a demo repo for you to play with.&lt;br /&gt;
 Check it out here: &lt;a href=&#34;https://github.com/bennycwong/git-rebase-practice&#34;&gt;git-rebase-practice&lt;/a&gt; on github.&lt;/p&gt;
@@ -536,17 +536,17 @@ $ rm -rf git-rebase-practice
 $ git clone git@github.com:bennycwong/git-rebase-practice.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;d-so-why-is-it-called-rebasing-plain-english:702faf315c6b59cc55b18aa5ea562949&#34;&gt;D. So why is it called rebasing? (Plain English)&lt;/h2&gt;
+&lt;h2 id=&#34;d-so-why-is-it-called-rebasing-plain-english&#34;&gt;D. So why is it called rebasing? (Plain English)&lt;/h2&gt;
 
 &lt;p&gt;Here is a helpful heuristic to remember rebasing means. Think of this as literally re-&lt;strong&gt;base&lt;/strong&gt;-ing something. You are changing what your current branch is &lt;strong&gt;based&lt;/strong&gt; on.&lt;/p&gt;
 
 &lt;p&gt;Another way to put it, rebase is going back in time and changing history according to another timeline before apply my changes in this current timeline.&lt;/p&gt;
 
-&lt;h2 id=&#34;e-learn-more-technical-definition:702faf315c6b59cc55b18aa5ea562949&#34;&gt;E. Learn More (Technical Definition)&lt;/h2&gt;
+&lt;h2 id=&#34;e-learn-more-technical-definition&#34;&gt;E. Learn More (Technical Definition)&lt;/h2&gt;
 
 &lt;p&gt;If you want to learn more about this topic, Atlassian has a great git tutorial series &lt;a href=&#34;https://www.atlassian.com/git/tutorials/merging-vs-rebasing/summary&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;appendix-a-the-adept-method:702faf315c6b59cc55b18aa5ea562949&#34;&gt;*Appendix A: The ADEPT Method&lt;/h2&gt;
+&lt;h2 id=&#34;appendix-a-the-adept-method&#34;&gt;*Appendix A: The ADEPT Method&lt;/h2&gt;
 
 &lt;p&gt;I&amp;rsquo;m currently learning how to apply the &lt;a href=&#34;https://betterexplained.com/articles/adept-method/&#34;&gt;ADEPT Method&lt;/a&gt; of teaching.&lt;/p&gt;
 
@@ -554,7 +554,7 @@ $ git clone git@github.com:bennycwong/git-rebase-practice.git
   &lt;img src=&#34;https://betterexplained.com/wp-content/uploads/adept/adept-method.png&#34; alt=&#34;ADEPT&#34; /&gt;
 &lt;/center&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;appendix-b-so-what-about-conflicts:702faf315c6b59cc55b18aa5ea562949&#34;&gt;Appendix B: So what about conflicts?&lt;/h2&gt;
+&lt;h2 id=&#34;appendix-b-so-what-about-conflicts&#34;&gt;Appendix B: So what about conflicts?&lt;/h2&gt;
 
 &lt;p&gt;Conflicts happen whether you merge or rebase. Look for a post in the future that discuss this topic further&amp;hellip;&lt;/p&gt;
 </description>
@@ -620,73 +620,73 @@ Below are some of my favorites.
 
 &lt;hr /&gt;
 
-&lt;h5 id=&#34;day-after-birth:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Day After Birth&lt;/h5&gt;
+&lt;h5 id=&#34;day-after-birth&#34;&gt;Day After Birth&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://c2.staticflickr.com/2/1505/25064202002_7a79197d43_o.jpg&#34; alt=&#34;Marcus Canyon&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This is my son, Marcus, one day after birth.&lt;/p&gt;
 
-&lt;h2 id=&#34;feb-11-2016:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Feb 11, 2016&lt;/h2&gt;
+&lt;h2 id=&#34;feb-11-2016&#34;&gt;Feb 11, 2016&lt;/h2&gt;
 
-&lt;h2 id=&#34;ucla-santa-monica-hospital:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;UCLA Santa Monica Hospital&lt;/h2&gt;
+&lt;h2 id=&#34;ucla-santa-monica-hospital&#34;&gt;UCLA Santa Monica Hospital&lt;/h2&gt;
 
-&lt;h2 id=&#34;santa-monica-ca:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Santa Monica, CA&lt;/h2&gt;
+&lt;h2 id=&#34;santa-monica-ca&#34;&gt;Santa Monica, CA&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://c2.staticflickr.com/2/1505/25064202002_7a79197d43_o.jpg&#34;&gt;full size&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h5 id=&#34;lord-windsor:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Lord Windsor&lt;/h5&gt;
+&lt;h5 id=&#34;lord-windsor&#34;&gt;Lord Windsor&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1672/25182420115_3522f01d4e_h_d.jpg&#34; alt=&#34;Lord Windsor&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;feb-6-2016:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Feb 6, 2016&lt;/h2&gt;
+&lt;h2 id=&#34;feb-6-2016&#34;&gt;Feb 6, 2016&lt;/h2&gt;
 
-&lt;h2 id=&#34;lord-windsor-1:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Lord Windsor&lt;/h2&gt;
+&lt;h2 id=&#34;lord-windsor-1&#34;&gt;Lord Windsor&lt;/h2&gt;
 
-&lt;h2 id=&#34;long-beach-ca:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Long Beach, CA&lt;/h2&gt;
+&lt;h2 id=&#34;long-beach-ca&#34;&gt;Long Beach, CA&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://farm2.staticflickr.com/1472/24814705719_6512719bef_o_d.jpg&#34;&gt;full size&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h5 id=&#34;still:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Still&lt;/h5&gt;
+&lt;h5 id=&#34;still&#34;&gt;Still&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1487/25089171801_de12c0f1f2_h_d.jpg&#34; alt=&#34;still&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;feb-6-2016-1:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Feb 6, 2016&lt;/h2&gt;
+&lt;h2 id=&#34;feb-6-2016-1&#34;&gt;Feb 6, 2016&lt;/h2&gt;
 
-&lt;h2 id=&#34;lord-windsor-2:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Lord Windsor&lt;/h2&gt;
+&lt;h2 id=&#34;lord-windsor-2&#34;&gt;Lord Windsor&lt;/h2&gt;
 
-&lt;h2 id=&#34;long-beach-ca-1:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Long Beach, CA&lt;/h2&gt;
+&lt;h2 id=&#34;long-beach-ca-1&#34;&gt;Long Beach, CA&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://c2.staticflickr.com/2/1487/25089171801_de12c0f1f2_h.jpg&#34;&gt;full size&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h5 id=&#34;el-matador-film:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;El Matador (Film)&lt;/h5&gt;
+&lt;h5 id=&#34;el-matador-film&#34;&gt;El Matador (Film)&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://farm2.staticflickr.com/1618/25156129356_44be7c9268_h_d.jpg&#34; alt=&#34;El Matador&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;apr-16-2015:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Apr 16, 2015&lt;/h2&gt;
+&lt;h2 id=&#34;apr-16-2015&#34;&gt;Apr 16, 2015&lt;/h2&gt;
 
-&lt;h2 id=&#34;el-matador-beach:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;El Matador Beach&lt;/h2&gt;
+&lt;h2 id=&#34;el-matador-beach&#34;&gt;El Matador Beach&lt;/h2&gt;
 
-&lt;h2 id=&#34;malibu-ca:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Malibu, CA&lt;/h2&gt;
+&lt;h2 id=&#34;malibu-ca&#34;&gt;Malibu, CA&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://farm2.staticflickr.com/1618/25156129356_52fcb69b8c_o_d.jpg&#34;&gt;full size&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h5 id=&#34;solar-eclipse-over-santa-monica-pier:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Solar Eclipse Over Santa Monica Pier&lt;/h5&gt;
+&lt;h5 id=&#34;solar-eclipse-over-santa-monica-pier&#34;&gt;Solar Eclipse Over Santa Monica Pier&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&#34;../images/eclipse.jpg&#34; alt=&#34;eclipse&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;may-20-2012:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;May 20, 2012&lt;/h2&gt;
+&lt;h2 id=&#34;may-20-2012&#34;&gt;May 20, 2012&lt;/h2&gt;
 
-&lt;h2 id=&#34;santa-monica-beach:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Santa Monica Beach&lt;/h2&gt;
+&lt;h2 id=&#34;santa-monica-beach&#34;&gt;Santa Monica Beach&lt;/h2&gt;
 
-&lt;h2 id=&#34;santa-monica-ca-1:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Santa Monica, CA&lt;/h2&gt;
+&lt;h2 id=&#34;santa-monica-ca-1&#34;&gt;Santa Monica, CA&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;../images/eclipse.jpg&#34;&gt;full size&lt;/a&gt;&lt;/p&gt;
 
@@ -718,27 +718,27 @@ Below are some of my favorites.
 
 &lt;hr /&gt;
 
-&lt;h5 id=&#34;learn-faster-with-the-feyman-technique-by-scott-young:13a15424aa1843216936f1cd3fd26472&#34;&gt;Learn faster with the Feyman Technique by Scott Young&lt;/h5&gt;
+&lt;h5 id=&#34;learn-faster-with-the-feyman-technique-by-scott-young&#34;&gt;Learn faster with the Feyman Technique by Scott Young&lt;/h5&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=FrNqSLPaZLc&#34;&gt;&lt;img src=&#34;http://img.youtube.com/vi/FrNqSLPaZLc/0.jpg&#34; alt=&#34;Learn Faster with the Feynman Technique &#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;step-1:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 1&lt;/h5&gt;
+&lt;h5 id=&#34;step-1&#34;&gt;Step 1&lt;/h5&gt;
 
 &lt;p&gt;Write the name of the concept at the top of a blank piece of paper.&lt;/p&gt;
 
-&lt;h5 id=&#34;step-2:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 2:&lt;/h5&gt;
+&lt;h5 id=&#34;step-2&#34;&gt;Step 2:&lt;/h5&gt;
 
 &lt;p&gt;Write down an explanation of the concept on the page. Use plain English. Pretend you are teaching it to someone else (e.g a new student). This should highlight what you understand, but more importantly pinpoint what you don&amp;rsquo;t quite know.&lt;/p&gt;
 
-&lt;h5 id=&#34;step-3:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 3&lt;/h5&gt;
+&lt;h5 id=&#34;step-3&#34;&gt;Step 3&lt;/h5&gt;
 
 &lt;p&gt;Review what you have pinpointed you don&amp;rsquo;t know. Go back to the source material, re-read, and re-learn it. Repeat Step 2.&lt;/p&gt;
 
-&lt;h5 id=&#34;step-4:13a15424aa1843216936f1cd3fd26472&#34;&gt;Step 4&lt;/h5&gt;
+&lt;h5 id=&#34;step-4&#34;&gt;Step 4&lt;/h5&gt;
 
 &lt;p&gt;If you are using overly wordy or confusing language (or simply paraphrasing the source material) try again so you filter the content. Simplify your language, and where possible use simple analogy.&lt;/p&gt;
 
-&lt;h5 id=&#34;conclusion:13a15424aa1843216936f1cd3fd26472&#34;&gt;Conclusion&lt;/h5&gt;
+&lt;h5 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h5&gt;
 
 &lt;p&gt;That&amp;rsquo;s it. A simple and powerful technique to ensure you can rapidly learn and retain new concepts and information.&lt;/p&gt;
 </description>
@@ -778,11 +778,11 @@ These are my open source projects.
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;the-riddler-simulations:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;The Riddler Simulations&lt;/h3&gt;
+&lt;h3 id=&#34;the-riddler-simulations&#34;&gt;The Riddler Simulations&lt;/h3&gt;
 
 &lt;p&gt;Practicing Elixir by writing simulations to puzzles by &lt;a href=&#34;https://fivethirtyeight.com/tag/the-riddler/&#34;&gt;fivethirtyeight.com&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;elevator-button-riddle:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Elevator Button Riddle&lt;/h4&gt;
+&lt;h4 id=&#34;elevator-button-riddle&#34;&gt;Elevator Button Riddle&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://fivethirtyeight.com/features/can-you-solve-this-elevator-button-puzzle/&#34;&gt;Click here to see the Elevator Button riddle on Riddler&lt;/a&gt;&lt;/p&gt;
 
@@ -792,7 +792,7 @@ These are my open source projects.
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/riddler/tree/master/elevator_button&#34;&gt;Simulation code&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;the-grizzly-problem:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;The Grizzly Problem&lt;/h4&gt;
+&lt;h4 id=&#34;the-grizzly-problem&#34;&gt;The Grizzly Problem&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://fivethirtyeight.com/features/should-the-grizzly-bear-eat-the-salmon/&#34;&gt;Click here to see the Grizzly Problem on Riddler&lt;/a&gt;&lt;/p&gt;
 
@@ -806,7 +806,7 @@ These are my open source projects.
 
 &lt;hr /&gt;
 
-&lt;h4 id=&#34;ember-js:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Ember.js&lt;/h4&gt;
+&lt;h4 id=&#34;ember-js&#34;&gt;Ember.js&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/dollarshaveclub/ember-router-scroll&#34;&gt;ember-router-scroll&lt;/a&gt;&lt;br /&gt;
 Scroll to top behavior with preserved browser history scroll position&lt;br /&gt;
@@ -819,17 +819,17 @@ This is a tool to help save build times.&lt;/p&gt;
 Easy way to use Bootstrap 4 in your Ember projects&lt;br /&gt;
 (I&amp;rsquo;m no longer maintaining this project)&lt;/p&gt;
 
-&lt;h4 id=&#34;ruby-rails:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Ruby/Rails&lt;/h4&gt;
+&lt;h4 id=&#34;ruby-rails&#34;&gt;Ruby/Rails&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/omniauth-nikeplus&#34;&gt;omniauth-nikeplus&lt;/a&gt;&lt;br /&gt;
 Auth strategy for Nike Plus&lt;/p&gt;
 
-&lt;h4 id=&#34;elixir:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Elixir&lt;/h4&gt;
+&lt;h4 id=&#34;elixir&#34;&gt;Elixir&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/phoenix_f1_json_api&#34;&gt;phoenix_f1_json_api&lt;/a&gt;&lt;br /&gt;
 A Formula 1 Race Data written in Elixir/Phoenix&lt;/p&gt;
 
-&lt;h4 id=&#34;misc:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Misc&lt;/h4&gt;
+&lt;h4 id=&#34;misc&#34;&gt;Misc&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/bennycwong/dotfiles&#34;&gt;dotfiles&lt;/a&gt;&lt;br /&gt;
 My Dotfiles to recreate my setup if necessary&lt;/p&gt;
@@ -852,7 +852,7 @@ A Dashboard of cute animals. You can see it running at &lt;a href=&#34;https://d
 
 &lt;p&gt;&lt;center&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;the-best-way-to-learn-is-to-teach-it-to-someone-else:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&amp;ldquo;The best way to learn is to teach it to someone else.&amp;rdquo;&lt;/h2&gt;
+&lt;h2 id=&#34;the-best-way-to-learn-is-to-teach-it-to-someone-else&#34;&gt;&amp;ldquo;The best way to learn is to teach it to someone else.&amp;rdquo;&lt;/h2&gt;
 
 &lt;p&gt;&lt;/center&gt;&lt;/p&gt;
 
@@ -864,45 +864,45 @@ A Dashboard of cute animals. You can see it running at &lt;a href=&#34;https://d
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;programming-software:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Programming/Software&lt;/h3&gt;
+&lt;h3 id=&#34;programming-software&#34;&gt;Programming/Software&lt;/h3&gt;
 
-&lt;h5 id=&#34;serializers-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Serializers (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;serializers-coming-soon&#34;&gt;Serializers (Coming Soon)&lt;/h5&gt;
 
-&lt;h3 id=&#34;technology:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Technology&lt;/h3&gt;
+&lt;h3 id=&#34;technology&#34;&gt;Technology&lt;/h3&gt;
 
-&lt;h5 id=&#34;3d-printing-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;3D Printing (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;3d-printing-coming-soon&#34;&gt;3D Printing (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;public-key-cryptography-public-key-private-key-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Public-key cryptography (Public Key/Private Key) (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;public-key-cryptography-public-key-private-key-coming-soon&#34;&gt;Public-key cryptography (Public Key/Private Key) (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;vpn-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;VPN (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;vpn-coming-soon&#34;&gt;VPN (Coming Soon)&lt;/h5&gt;
 
-&lt;h3 id=&#34;workflow:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Workflow&lt;/h3&gt;
+&lt;h3 id=&#34;workflow&#34;&gt;Workflow&lt;/h3&gt;
 
-&lt;h3 id=&#34;learning:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Learning&lt;/h3&gt;
+&lt;h3 id=&#34;learning&#34;&gt;Learning&lt;/h3&gt;
 
-&lt;h5 id=&#34;the-feyman-technique-for-rapid-learning-primers-feynman-technique:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;&lt;a href=&#34;../primers/feynman-technique&#34;&gt;The Feyman Technique for Rapid Learning&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;the-feyman-technique-for-rapid-learning-primers-feynman-technique&#34;&gt;&lt;a href=&#34;../primers/feynman-technique&#34;&gt;The Feyman Technique for Rapid Learning&lt;/a&gt;&lt;/h5&gt;
 
-&lt;h5 id=&#34;holistic-learning-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Holistic Learning (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;holistic-learning-coming-soon&#34;&gt;Holistic Learning (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;the-adept-method-by-kalid-azad-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;The ADEPT Method by Kalid Azad (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;the-adept-method-by-kalid-azad-coming-soon&#34;&gt;The ADEPT Method by Kalid Azad (Coming Soon)&lt;/h5&gt;
 
-&lt;h3 id=&#34;photography:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Photography&lt;/h3&gt;
+&lt;h3 id=&#34;photography&#34;&gt;Photography&lt;/h3&gt;
 
-&lt;h5 id=&#34;exposure-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Exposure (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;exposure-coming-soon&#34;&gt;Exposure (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;composition-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Composition (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;composition-coming-soon&#34;&gt;Composition (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;lighting-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Lighting (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;lighting-coming-soon&#34;&gt;Lighting (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;artificial-lights-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Artificial Lights (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;artificial-lights-coming-soon&#34;&gt;Artificial Lights (Coming Soon)&lt;/h5&gt;
 
-&lt;h3 id=&#34;misc:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Misc&lt;/h3&gt;
+&lt;h3 id=&#34;misc&#34;&gt;Misc&lt;/h3&gt;
 
-&lt;h5 id=&#34;coffee-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Coffee (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;coffee-coming-soon&#34;&gt;Coffee (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;audio-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Audio (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;audio-coming-soon&#34;&gt;Audio (Coming Soon)&lt;/h5&gt;
 
-&lt;h5 id=&#34;mens-style-coming-soon:d680e8a854a7cbad6d490c445cba2eba&#34;&gt;Mens Style (Coming Soon)&lt;/h5&gt;
+&lt;h5 id=&#34;mens-style-coming-soon&#34;&gt;Mens Style (Coming Soon)&lt;/h5&gt;
 </description>
     </item>
     

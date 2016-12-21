@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Benny C. Wong">
 		<meta name="description" content="">
-		<meta name="generator" content="Hugo 0.15" />
+		<meta name="generator" content="Hugo 0.17" />
 		<title>Using Multiple DBs in Phoenix &middot; Blog</title>
 		<link rel="shortcut icon" href="https://bennycwong.github.io/images/favicon.ico">
 		<link rel="stylesheet" href="https://bennycwong.github.io/css/style.css">
@@ -61,7 +61,7 @@
 <p>Here&rsquo;s are the steps.<br />
 In this example, I&rsquo;m going to define <strong>Repo</strong> as my main database, and a <strong>RepoPostgres</strong>, a postgres DB that I&rsquo;m using the handle concerns that are unrelated to to main database</p>
 
-<h4 id="1-define-the-second-database-in-your-config-file:32fd4cc1d30787d390c7c8a79d66130f">1. Define the second database in your config file:</h4>
+<h4 id="1-define-the-second-database-in-your-config-file">1. Define the second database in your config file:</h4>
 
 <p>//project/config/{env}.exs</p>
 
@@ -84,7 +84,7 @@ config :demo, Demo.RepoPostgres,
 
 </code></pre>
 
-<h4 id="2-create-a-new-repo-file-in-lib:32fd4cc1d30787d390c7c8a79d66130f">2. Create a new repo file in lib</h4>
+<h4 id="2-create-a-new-repo-file-in-lib">2. Create a new repo file in lib</h4>
 
 <p>//project/lib/demo/repo_postgres.ex</p>
 
@@ -93,7 +93,7 @@ config :demo, Demo.RepoPostgres,
 end
 </code></pre>
 
-<h4 id="3-add-the-new-database-repo-in-supervision-tree-on-app-start:32fd4cc1d30787d390c7c8a79d66130f">3. Add the new database repo in supervision tree on app start</h4>
+<h4 id="3-add-the-new-database-repo-in-supervision-tree-on-app-start">3. Add the new database repo in supervision tree on app start</h4>
 
 <p>//project/lib/demo.ex</p>
 
@@ -109,7 +109,7 @@ end
     ]
 </code></pre>
 
-<h4 id="4-use-it:32fd4cc1d30787d390c7c8a79d66130f">4. Use it!</h4>
+<h4 id="4-use-it">4. Use it!</h4>
 
 <p>In any place where you want to use the second database, simply use that module.</p>
 
@@ -127,7 +127,7 @@ end
 end
 </code></pre>
 
-<h4 id="conclusion:32fd4cc1d30787d390c7c8a79d66130f">Conclusion</h4>
+<h4 id="conclusion">Conclusion</h4>
 
 <p>I think this is one of the a-ha moments in my journey using elixir.</p>
 

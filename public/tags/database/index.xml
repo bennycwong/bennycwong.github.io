@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Database on Blog</title>
-    <link>https://bennycwong.github.io/tags/database/</link>
-    <description>Recent content in Database on Blog</description>
+    <title>Blog</title>
+    <link>https://bennycwong.github.io/tags/database/index.xml</link>
+    <description>Recent content on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Aug 2016 12:41:17 -0700</lastBuildDate>
     <atom:link href="https://bennycwong.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -28,7 +27,7 @@
 &lt;p&gt;Here&amp;rsquo;s are the steps.&lt;br /&gt;
 In this example, I&amp;rsquo;m going to define &lt;strong&gt;Repo&lt;/strong&gt; as my main database, and a &lt;strong&gt;RepoPostgres&lt;/strong&gt;, a postgres DB that I&amp;rsquo;m using the handle concerns that are unrelated to to main database&lt;/p&gt;
 
-&lt;h4 id=&#34;1-define-the-second-database-in-your-config-file:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;1. Define the second database in your config file:&lt;/h4&gt;
+&lt;h4 id=&#34;1-define-the-second-database-in-your-config-file&#34;&gt;1. Define the second database in your config file:&lt;/h4&gt;
 
 &lt;p&gt;//project/config/{env}.exs&lt;/p&gt;
 
@@ -51,7 +50,7 @@ config :demo, Demo.RepoPostgres,
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;2-create-a-new-repo-file-in-lib:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;2. Create a new repo file in lib&lt;/h4&gt;
+&lt;h4 id=&#34;2-create-a-new-repo-file-in-lib&#34;&gt;2. Create a new repo file in lib&lt;/h4&gt;
 
 &lt;p&gt;//project/lib/demo/repo_postgres.ex&lt;/p&gt;
 
@@ -60,7 +59,7 @@ config :demo, Demo.RepoPostgres,
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;3-add-the-new-database-repo-in-supervision-tree-on-app-start:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;3. Add the new database repo in supervision tree on app start&lt;/h4&gt;
+&lt;h4 id=&#34;3-add-the-new-database-repo-in-supervision-tree-on-app-start&#34;&gt;3. Add the new database repo in supervision tree on app start&lt;/h4&gt;
 
 &lt;p&gt;//project/lib/demo.ex&lt;/p&gt;
 
@@ -76,7 +75,7 @@ end
     ]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;4-use-it:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;4. Use it!&lt;/h4&gt;
+&lt;h4 id=&#34;4-use-it&#34;&gt;4. Use it!&lt;/h4&gt;
 
 &lt;p&gt;In any place where you want to use the second database, simply use that module.&lt;/p&gt;
 
@@ -94,7 +93,7 @@ end
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;conclusion:32fd4cc1d30787d390c7c8a79d66130f&#34;&gt;Conclusion&lt;/h4&gt;
+&lt;h4 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h4&gt;
 
 &lt;p&gt;I think this is one of the a-ha moments in my journey using elixir.&lt;/p&gt;
 

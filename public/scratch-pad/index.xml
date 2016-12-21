@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scratch-pads on Blog</title>
-    <link>https://bennycwong.github.io/scratch-pad/</link>
-    <description>Recent content in Scratch-pads on Blog</description>
+    <title>Scratch-pad-rsses on Blog</title>
+    <link>https://bennycwong.github.io/scratch-pad/index.xml</link>
+    <description>Recent content in Scratch-pad-rsses on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <atom:link href="https://bennycwong.github.io/scratch-pad/index.xml" rel="self" type="application/rss+xml" />
