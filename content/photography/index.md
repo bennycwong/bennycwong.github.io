@@ -9,7 +9,35 @@ Photography has been a hobby of mine since the year 2000, back in days when film
 Below are some of my favorites.
 </center>
 ***
+##### Monkey
 
+![Mandrill](https://farm1.staticflickr.com/607/32645518440_42f37c9328_o_d.jpg)
+Day at the zoo.
+
+## Feb 20, 2016
+## Los Angeles Zoo
+## Los Angeles, CA
+[full size](https://farm1.staticflickr.com/607/32645518440_42f37c9328_o_d.jpg)
+
+***
+##### Tea Lapse
+
+<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/HatefulSoreBlobfish' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+Brewing tea.
+
+## Feb 19, 2016
+## Culver City, CA
+
+***
+##### 367 Days Later
+![Marcus](https://farm4.staticflickr.com/3789/32872170902_4994b570a3_o_d.jpg)
+
+367 Days Later
+
+## Feb 12, 2016
+## Culver City, CA
+
+***
 ##### Day After Birth
 ![Marcus Canyon](https://c2.staticflickr.com/2/1505/25064202002_7a79197d43_o.jpg)
 
@@ -57,11 +85,11 @@ This is my son, Marcus, one day after birth.
 
 ##### Solar Eclipse Over Santa Monica Pier
 
-![eclipse](../images/eclipse.jpg)
+![eclipse](https://farm1.staticflickr.com/701/32719561806_8e1d1bedcb_o_d.jpg)
 ## May 20, 2012
 ## Santa Monica Beach
 ## Santa Monica, CA  
 
-[full size](../images/eclipse.jpg)
+[full size](https://farm1.staticflickr.com/701/32719561806_8e1d1bedcb_o_d.jpg)
 
 ***
